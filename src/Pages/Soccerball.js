@@ -28,8 +28,8 @@ export default function Soccerball() {
             The app checks if the device needs permission to access the motion
             API, and once granted activates the cannon-es physics engine. The
             physics 'arena' and three.js camera are then rotated around the
-            center of the scene to match the rotation of the device, allowing
-            the ball to interact with the scene as though it were in the device.
+            center of the scene to match the device orientation, allowing
+            the ball to interact with the scene as though it were inside.
           </p>
         </div>
       </div>

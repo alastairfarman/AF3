@@ -151,20 +151,55 @@ export default function Nav() {
 
   const categories = document.getElementById("categories");
 
-  function categoryHoverTrue() {
+  function categoryHoverTrue(category) {
+    const sectionOne = document.getElementById("nav-section-1");
+    const sectionTwo = document.getElementById("nav-section-2");
+    const sectionThree = document.getElementById("nav-section-3");
+    const sectionFour = document.getElementById("nav-section-4");
+
     categories.style.height = "2rem";
     categories.style.opacity = "100%";
+
+    switch (category) {
+      case "frontend":
+        sectionOne.classList.add("nav-hover");
+        break;
+      case "frontend 3d":
+        sectionOne.classList.add("nav-hover");
+        sectionTwo.classList.add("nav-hover");
+        break;
+      case "3d":
+        sectionTwo.classList.add("nav-hover");
+        break;
+      case "retouch":
+        sectionThree.classList.add("nav-hover");
+        break;
+      case "retouch photo":
+        sectionThree.classList.add("nav-hover");
+        sectionFour.classList.add("nav-hover");
+        break;
+      case "photo":
+        sectionFour.classList.add("nav-hover");
+        break;
+      default:
+    }
   }
   function categoryHoverFalse() {
+    const navSections = document.getElementsByClassName("nav-section");
+
     categories.style.height = "0rem";
     categories.style.opacity = "0%";
+
+    for (let i = 0; i < navSections.length; i++) {
+      navSections[i].classList.remove("nav-hover");
+    }
   }
 
   function handleHover(e) {
     setIsHover(true);
     setProject(e.target.dataset.project);
     setCategory(e.target.dataset.category);
-    categoryHoverTrue();
+    categoryHoverTrue(e.target.dataset.category);
   }
   function handleStopHover() {
     setIsHover(false);
@@ -204,7 +239,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="Soccerball"
-            data-category="frontend"
+            data-category="frontend 3d"
           >
             l
           </span>
@@ -214,7 +249,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="Sunglasses Product Visualisation"
-            data-category="frontend"
+            data-category="frontend 3d"
           >
             a
           </span>
@@ -224,7 +259,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="A Skincare Product Visualisation"
-            data-category="frontend"
+            data-category="frontend 3d"
           >
             s
           </span>
@@ -233,7 +268,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Loading Skate Wheel"
+            data-project="Sk8"
             data-category="3d"
           >
             t
@@ -305,7 +340,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="Performance Physique"
-            data-category="photo"
+            data-category="retouch photo"
           >
             m
           </span>
@@ -315,7 +350,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="Performance Physique"
-            data-category="photo"
+            data-category="retouch photo"
           >
             a
           </span>
@@ -325,7 +360,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="Performance Physique"
-            data-category="photo"
+            data-category="retouch photo"
           >
             n
           </span>
