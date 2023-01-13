@@ -1,0 +1,14 @@
+<svg viewBox="30.83 -3.792 448.501 505.637" width="505" height="505" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="gradient-0" x1="250" x2="250" y1="116.274" y2="383.726" gradientUnits="userSpaceOnUse" spreadMethod="pad">
+      <stop style="stop-color: #12c2e9;" offset="0"/>
+      <stop style="stop-color: #c471ed;" offset="0.5"/>
+      <stop style="stop-color: #f64f59;" offset="1"/>
+    </linearGradient>
+  </defs>
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 0px; paint-order: fill; fill: url(#gradient-0); fill-rule: nonzero;" cx="250" cy="250" rx="133.726" ry="133.726"/>
+  <path d="M 405 250 A 155 155 0 0 1 250 405 A 155 155 0 0 1 95 250 A 155 155 0 0 1 250 95 A 155 155 0 0 1 405 250 Z" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 0px;" id="path-1"/>
+  <text style="fill: rgb(51, 51, 51); font-family: 'GT-Flexa'; font-size: 124px; white-space: pre;" x="64.862" y="14.284"><textPath startOffset="0" xlink:href="#path-1">CLICK ME</textPath></text>
+  <path d="M 405 250 C 405 335.604 335.604 405 250 405 C 164.396 405 95 335.604 95 250 C 95 164.396 164.396 95 250 95 C 335.604 95 405 164.396 405 250 Z" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 0px;" id="path-2"/>
+  <text style="fill: rgb(51, 51, 51); font-family: 'GT-Flexa'; font-size: 124px; white-space: pre;" x="64.862" y="14.284"><textPath startOffset="500" xlink:href="#path-2">CLICK ME</textPath></text>
+</svg>
