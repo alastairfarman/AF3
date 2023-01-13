@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d36b9f39.css",
+    "main.js": "/static/js/main.02c74eae.js",
+    "static/media/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2": "/static/media/Fraunces-Italic[SOFT,WONK,opsz,wght].04692b969a0ccfbc21b5.woff2",
+    "static/media/Fraunces[SOFT,WONK,opsz,wght].woff2": "/static/media/Fraunces[SOFT,WONK,opsz,wght].c249fa27b277065a0d4c.woff2",
+    "static/media/GT-Flexa-Trial-VF.woff2": "/static/media/GT-Flexa-Trial-VF.7b4115588e5870b4d532.woff2",
+    "static/media/GT-Corporate-Web.woff2": "/static/media/GT-Corporate-Web.83ea51a47febaceb2ce1.woff2",
+    "index.html": "/index.html",
+    "main.d36b9f39.css.map": "/static/css/main.d36b9f39.css.map",
+    "main.02c74eae.js.map": "/static/js/main.02c74eae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d36b9f39.css",
+    "static/js/main.02c74eae.js"
+  ]
+}
