@@ -4,12 +4,14 @@ export default function Soccerball() {
       <div className="nav-spacer"></div>
       <div className="header-container">
         <div className="header">
+          <div className="title">
+        <h1>Soccerball</h1>
           <div className="tech">
             <img src="../tech-icons/React.svg" alt="React Logo"></img>
             <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
             <img src="../tech-icons/blender.png" alt="Blender logo"></img>
           </div>
-          <h1>Soccerball</h1>
+          </div>
           <p>
             Soccerball is a simple project exploring three.js, cannon-es and
             using device APIs. The initial idea was to experiment with device

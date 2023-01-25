@@ -4,11 +4,13 @@ export default function Performance() {
       <div className="nav-spacer"></div>
       <div className="header-container">
         <div className="header">
-          <div className="tech">
-            <img src="../tech-icons/React.svg" alt="React Logo"></img>
-            <img src="../tech-icons/formspark.svg" alt="Formspark Logo"></img>
+          <div className="title">
+            <h1>Performance Physique BMI Calculator</h1>
+            <div className="tech">
+              <img src="../tech-icons/React.svg" alt="React Logo"></img>
+              <img src="../tech-icons/formspark.svg" alt="Formspark Logo"></img>
+            </div>
           </div>
-          <h1>Performance Physique BMI Calculator</h1>
           <p>
             The Performance Physique BMI Calculator was commissioned by Grow
             With Pace Marketing, built as a tool for Performance Phsyique to

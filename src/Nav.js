@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectInfo from "./ProjectInfo";
 import Dot from "./Dot";
+import AboutDot from "./AboutDot";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -13,22 +14,17 @@ export default function Nav() {
 
   useEffect(() => {
     const letters = document.getElementsByClassName("letter");
-    let fontSettingsIndex = 1;
     let fontFamilyIndex = 0;
 
     const fontFamilies = ["GT-Flexa", "Fraunces-It"];
 
-    setInterval(() => selectFont(fontFamilyIndex), 7000);
-
-    //this shouldnt fire a new set font each time - can it check if font has changed or button clicked? current behaviour causes font to change before being removed if you click just before fire
-
     function selectFont(fontFamilyIndex) {
       if (fontFamilyIndex === 0) {
-        changeNameNavElementFlexa();
         applyFont(fontFamilyIndex);
+        setTimeout(() => changeNameNavElementFlexa(), 2000);
       } else if (fontFamilyIndex === 1) {
-        changeNameNavElementFrauncesIt();
         applyFont(fontFamilyIndex);
+        setTimeout(() => changeNameNavElementFrauncesIt(), 2000);
       }
     }
 
@@ -38,87 +34,79 @@ export default function Nav() {
       for (let i = 0; i < letters.length; i++) {
         if (letters[i].id !== "dot") {
           letters[i].style.fontFamily = fontFamilies[fontFamilyIndex];
+          if (fontFamilyIndex === 1) {
+            letters[
+              i
+            ].style.fontVariationSettings = `"opsz" 144, "wght" 900, "SOFT" 100, "WONK" 1`;
+          } else {
+            letters[
+              i
+            ].style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
+          }
         }
       }
     }
-
-    // function changeNameNavElementRandom() {
-    //   //set variable font parameters, negative italic number means 1/3 chance it is NOT italic
-    //   const weight = Math.floor(Math.random() * (800 - 120 + 1)) + 120;
-    //   const width = Math.floor(Math.random() * (150 - 25 + 1)) + 25;
-    //   const italic = Math.random() * (1 - -0.5) + -0.5;
-
-    //   const fontVariationSettings = `"wght" ${weight}, "wdth" ${width}, "ital" ${italic}`;
-
-    //   //reduce font size based on overall width to prevent page stretching. rangeLimiter changes the strength of the effect
-
-    //   let normalisedWeight = (weight - 120) / (800 - 120);
-    //   let normalisedWidth = (width - 25) / (150 - 25);
-    //   let overallWidthValue =
-    //     (normalisedWeight + normalisedWidth + normalisedWidth) / 3;
-    //   let rangeLimiter = 0.5;
-    //   let shrinkFactor = 1 - overallWidthValue * rangeLimiter;
-
-    //   for (let i = 0; i < letters.length; i++) {
-    //     if (letters[i].id !== "dot") {
-    //       letters[i].style.fontSize = `calc((180vw / 15) * ${shrinkFactor})`;
-    //     }
-    //   }
-
-    //   //apply the settings to letters individually (allows grid to work and potential adjustments per letter later)
-    //   for (let i = 0; i < letters.length; i++) {
-    //     if (letters[i].id !== "dot") {
-    //       letters[i].style.fontVariationSettings = fontVariationSettings;
-    //     }
-    //   }
-    // }
 
     function changeNameNavElementFlexa() {
       document.getElementById("nav").style.textTransform = "capitalize";
       const defaultFontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
-      const fontVariationSettingsTwo = `"wght" 800, "wdth" 65, "ital" 1`;
-      const fontVariationSettingsThree = `"wght" 100, "wdth" 85, "ital" 0`;
-      const fontVariationSettingsFour = `"wght" 800, "wdth" 5, "ital" 0`;
+      const fontVariationSettingsTwo = `"wght" 800, "wdth" 50, "ital" 0`;
 
       const settingsArray = [
         defaultFontVariationSettings,
         fontVariationSettingsTwo,
-        fontVariationSettingsThree,
-        fontVariationSettingsFour,
       ];
 
-      for (let i = 0; i < letters.length; i++) {
-        if (letters[i].id !== "dot") {
-          letters[i].style.fontVariationSettings =
-            settingsArray[fontSettingsIndex];
+      const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+
+      async function load() {
+        for (var i = 0; i < letters.length; i++) {
+          if (letters[i].id !== "dot" && letters[i].id !== "about") {
+            letters[i].style.fontVariationSettings = settingsArray[1];
+            reverseLetter(letters[i]);
+          }
+          await timer(100);
         }
       }
 
-      fontSettingsIndex === 3 ? (fontSettingsIndex = 0) : fontSettingsIndex++;
+      load();
+
+      function reverseLetter(letter) {
+        setTimeout(() => {
+          letter.style.fontVariationSettings = settingsArray[0];
+        }, 300);
+      }
     }
     function changeNameNavElementFrauncesIt() {
       document.getElementById("nav").style.textTransform = "capitalize";
 
-      const defaultFontVariationSettings = `"opsz" 144, "wght" 560, "SOFT" 40, "WONK" 1`;
-      const fontVariationSettingsTwo = `"opsz" 144, "wght" 800, "SOFT" 100, "WONK" 1`;
-      const fontVariationSettingsThree = `"opsz" 144, "wght" 250, "SOFT" 0, "WONK" 1`;
-      const fontVariationSettingsFour = `"opsz" 144, "wght" 900, "SOFT" 0, "WONK" 1`;
+      const defaultFontVariationSettings = `"opsz" 144, "wght" 900, "SOFT" 100, "WONK" 1`;
+      const fontVariationSettingsTwo = `"opsz" 144, "wght" 900, "SOFT" 0, "WONK" 1`;
 
       const settingsArray = [
         defaultFontVariationSettings,
         fontVariationSettingsTwo,
-        fontVariationSettingsThree,
-        fontVariationSettingsFour,
       ];
 
-      for (let i = 0; i < letters.length; i++) {
-        if (letters[i].id !== "dot") {
-          letters[i].style.fontVariationSettings =
-            settingsArray[fontSettingsIndex];
+      const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+
+      async function load() {
+        for (var i = 0; i < letters.length; i++) {
+          if (letters[i].id !== "dot" && letters[i].id !== "about") {
+            letters[i].style.fontVariationSettings = settingsArray[1];
+            reverseLetter(letters[i]);
+          }
+          await timer(100);
         }
       }
 
-      fontSettingsIndex === 3 ? (fontSettingsIndex = 0) : fontSettingsIndex++;
+      load();
+
+      function reverseLetter(letter) {
+        setTimeout(() => {
+          letter.style.fontVariationSettings = settingsArray[0];
+        }, 300);
+      }
     }
 
     click_ref.current = handleDotClick;
@@ -129,8 +117,9 @@ export default function Nav() {
 
       async function load() {
         for (var i = 0; i < letters.length; i++) {
-          if (letters[i].id !== "dot") {
+          if (letters[i].id !== "dot" && letters[i].id !== "about") {
             letters[i].style.transform = "translate(0, -500px)";
+            slideBackLetter(letters[i]);
           }
           await timer(50);
         }
@@ -138,60 +127,75 @@ export default function Nav() {
 
       load();
 
-      setTimeout(() => {
-        selectFont(fontFamilyIndex);
-        for (var i = 0; i < letters.length; i++) {
-          if (letters[i].id !== "dot") {
-            letters[i].style.transform = "translate(0, 0px)";
-          }
-        }
-      }, 1000);
+      function slideBackLetter(letter) {
+        setTimeout(() => {
+          selectFont(fontFamilyIndex);
+          letter.style.transform = "translate(0, 0px)";
+        }, 1500);
+      }
     }
   }, []);
 
-  const categories = document.getElementById("categories");
-
   function categoryHoverTrue(category) {
-    const sectionOne = document.getElementById("nav-section-1");
-    const sectionTwo = document.getElementById("nav-section-2");
-    const sectionThree = document.getElementById("nav-section-3");
-    const sectionFour = document.getElementById("nav-section-4");
-
+    const categories = document.getElementById("categories");
+    // const sectionOne = document.getElementById("nav-section-1");
+    // const sectionTwo = document.getElementById("nav-section-2");
+    // const sectionThree = document.getElementById("nav-section-3");
+    // const sectionFour = document.getElementById("nav-section-4");
+    const frontendCat = document.getElementById("frontend");
+    const threedCat = document.getElementById("threed");
+    const retouchCat = document.getElementById("retouch");
+    const photoCat = document.getElementById("photo");
+    const staticBar = document.getElementById("static-bar");
     categories.style.height = "2rem";
     categories.style.opacity = "100%";
+    staticBar.style.backgroundColor = "rgba(244,244,244,1)";
+    // staticBar.style.backdropFilter = "blur(10px)";
 
     switch (category) {
       case "frontend":
-        sectionOne.classList.add("nav-hover");
+        // sectionOne.classList.add("nav-hover");
+        frontendCat.classList.add("cat-hover");
         break;
       case "frontend 3d":
-        sectionOne.classList.add("nav-hover");
-        sectionTwo.classList.add("nav-hover");
+        // sectionOne.classList.add("nav-hover");
+        // sectionTwo.classList.add("nav-hover");
+        frontendCat.classList.add("cat-hover");
+        threedCat.classList.add("cat-hover");
         break;
       case "3d":
-        sectionTwo.classList.add("nav-hover");
+        // sectionTwo.classList.add("nav-hover");
+        threedCat.classList.add("cat-hover");
         break;
       case "retouch":
-        sectionThree.classList.add("nav-hover");
+        // sectionThree.classList.add("nav-hover");
+        retouchCat.classList.add("cat-hover");
         break;
       case "retouch photo":
-        sectionThree.classList.add("nav-hover");
-        sectionFour.classList.add("nav-hover");
+        // sectionThree.classList.add("nav-hover");
+        // sectionFour.classList.add("nav-hover");
+        retouchCat.classList.add("cat-hover");
+        photoCat.classList.add("cat-hover");
         break;
       case "photo":
-        sectionFour.classList.add("nav-hover");
+        // sectionFour.classList.add("nav-hover");
+        photoCat.classList.add("cat-hover");
         break;
       default:
     }
   }
   function categoryHoverFalse() {
-    const navSections = document.getElementsByClassName("nav-section");
-
+    const categories = document.getElementById("categories");
+    const categoriesElements = document.getElementById("categories").children;
+    const staticBar = document.getElementById("static-bar");
     categories.style.height = "0rem";
     categories.style.opacity = "0%";
+    staticBar.style.backgroundColor = null;
+    staticBar.style.backdropFilter = null;
 
-    for (let i = 0; i < navSections.length; i++) {
-      navSections[i].classList.remove("nav-hover");
+    for (let i = 0; i < categoriesElements.length; i++) {
+      // navSections[i].classList.remove("nav-hover");
+      categoriesElements[i].classList.remove("cat-hover");
     }
   }
 
@@ -222,7 +226,15 @@ export default function Nav() {
     <>
       <div id="static-bar">
         <div id="nav">
-          <span></span>
+          <span
+            className="letter"
+            id="about"
+            onClick={() => click_ref.current()}
+            onMouseEnter={handleDotHover}
+            onMouseLeave={handleDotStopHover}
+          >
+            <AboutDot />
+          </span>
           <span
             className="letter"
             onMouseEnter={handleHover}
@@ -239,7 +251,7 @@ export default function Nav() {
             onMouseLeave={handleStopHover}
             onClick={handleClick}
             data-project="Soccerball"
-            data-category="frontend 3d"
+            data-category="frontend"
           >
             l
           </span>
@@ -278,7 +290,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="'Rest stop 2066'"
+            data-project="Rest 2066"
             data-category="3d"
           >
             a
@@ -373,7 +385,7 @@ export default function Nav() {
           >
             <Dot />
           </span>
-          <span
+          {/* <span
             id="nav-section-1"
             className="nav-section"
             data-section="frontend"
@@ -392,12 +404,12 @@ export default function Nav() {
             id="nav-section-4"
             className="nav-section"
             data-section="photo"
-          ></span>
+          ></span> */}
           <div id="categories">
-            <span>Frontend</span>
-            <span>3D</span>
-            <span>Retouch</span>
-            <span>Photo</span>
+            <span id="frontend">Frontend</span>
+            <span id="threed">3D</span>
+            <span id="retouch">Retouch</span>
+            <span id="photo">Photo</span>
           </div>
           <ProjectInfo
             isHover={isHover}

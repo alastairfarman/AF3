@@ -4,81 +4,89 @@ export default function Sk8() {
       <div className="nav-spacer"></div>
       <div className="header-container">
         <div className="header">
-          <div className="tech">
-            <img src="../tech-icons/blender.png" alt="Blender logo"></img>
-          </div>
-          <h1>Sk8</h1>
-          <p>Sk8 explores modelling and materials in blender.</p>
-          <div id="sk8-wheel-array">
-            <div className="sk8-wheel-container">
-              <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-                <source src="../media/sk8-v2.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-              <video
-                className="sk8-wheel-hover"
-                autoPlay
-                muted
-                loop
-                height={"200px"}
-              >
-                <source src="../media/sk8.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-            </div>
-            <div className="sk8-wheel-container">
-              <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-                <source src="../media/sk8-v2.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-              <video
-                className="sk8-wheel-hover"
-                autoPlay
-                muted
-                loop
-                height={"200px"}
-              >
-                <source src="../media/sk8.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-            </div>
-            <div className="sk8-wheel-container">
-              <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-                <source src="../media/sk8-v2.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-              <video
-                className="sk8-wheel-hover"
-                autoPlay
-                muted
-                loop
-                height={"200px"}
-              >
-                <source src="../media/sk8.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-            </div>
-            <div className="sk8-wheel-container">
-              <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-                <source src="../media/sk8-v2.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
-              <video
-                className="sk8-wheel-hover"
-                autoPlay
-                muted
-                loop
-                height={"200px"}
-              >
-                <source src="../media/sk8.webm" type="video/mp4" />
-                This browser doesn't support video tag.
-              </video>
+          <div className="title">
+            <h1>Sk8</h1>
+            <div className="tech">
+              <img src="../tech-icons/blender.png" alt="Blender logo"></img>
             </div>
           </div>
+          <p>Sk8 is a personal project to further explore modelling techniques, materials and animation in Blender, as well as render options and video output with alpha channels for web implementation.</p>
         </div>
+      </div>
+      <div id="kickflip">
+        <video autoPlay muted loop>
+          <source src="../media/kickflip.webm" type="video/mp4" />
+          This browser doesn't support video tag.
+        </video>
       </div>
       <div className="hero-img">
         <img src="../media/sk8-bearing.png" alt=""></img>
+      </div>
+      <div id="sk8-wheel-array">
+        <div className="sk8-wheel-container">
+          <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
+            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+          <video
+            className="sk8-wheel-hover"
+            autoPlay
+            muted
+            loop
+            height={"200px"}
+          >
+            <source src="../media/sk8.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+        </div>
+        <div className="sk8-wheel-container">
+          <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
+            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+          <video
+            className="sk8-wheel-hover"
+            autoPlay
+            muted
+            loop
+            height={"200px"}
+          >
+            <source src="../media/sk8.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+        </div>
+        <div className="sk8-wheel-container">
+          <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
+            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+          <video
+            className="sk8-wheel-hover"
+            autoPlay
+            muted
+            loop
+            height={"200px"}
+          >
+            <source src="../media/sk8.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+        </div>
+        <div className="sk8-wheel-container">
+          <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
+            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+          <video
+            className="sk8-wheel-hover"
+            autoPlay
+            muted
+            loop
+            height={"200px"}
+          >
+            <source src="../media/sk8.webm" type="video/mp4" />
+            This browser doesn't support video tag.
+          </video>
+        </div>
       </div>
       <div className="double-img">
         <img src="../media/sk8-loading.png" alt=""></img>
