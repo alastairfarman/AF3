@@ -317,8 +317,26 @@ p {
   display: flex;
 }
 
+.bullet{
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.link:hover{
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .tech img {
-  margin-right: 1rem;
+  margin-left: 1rem;
   height: 30px;
   float: center;
   z-index: -1;

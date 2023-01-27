@@ -11,6 +11,17 @@ export default function Performance() {
               <img src="../tech-icons/formspark.svg" alt="Formspark Logo"></img>
             </div>
           </div>
+          <h4>REACT, FORMSPARK</h4>
+          <div>
+            <a
+              href="https://alastairfarman.github.io/performance-physique/"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              OPEN IN NEW WINDOW<span className="bullet"> &bull;</span>
+            </a>
+          </div>
           <p>
             The Performance Physique BMI Calculator was commissioned by Grow
             With Pace Marketing, built as a tool for Performance Phsyique to
@@ -38,7 +49,7 @@ export default function Performance() {
             also storing the input data form submission.
           </p>
         </div>
-        <img src="../media/pp-01.png" alt=""></img>
+        <img src="../media/pp-02.png" alt=""></img>
       </div>
     </>
   );

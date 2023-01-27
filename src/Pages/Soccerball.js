@@ -5,12 +5,23 @@ export default function Soccerball() {
       <div className="header-container">
         <div className="header">
           <div className="title">
-        <h1>Soccerball</h1>
-          <div className="tech">
-            <img src="../tech-icons/React.svg" alt="React Logo"></img>
-            <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
-            <img src="../tech-icons/blender.png" alt="Blender logo"></img>
+            <h1>Soccerball</h1>
+            <div className="tech">
+              <img src="../tech-icons/React.svg" alt="React Logo"></img>
+              <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
+              <img src="../tech-icons/blender.png" alt="Blender logo"></img>
+            </div>
           </div>
+          <h4>REACT, THREE.JS, CANNON-ES, BLENDER</h4>
+          <div>
+            <a
+              href="https://alastairfarman.github.io/soccerball/"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              OPEN IN NEW WINDOW<span className="bullet"> &bull;</span>
+            </a>
           </div>
           <p>
             Soccerball is a simple project exploring three.js, cannon-es and
@@ -30,8 +41,8 @@ export default function Soccerball() {
             The app checks if the device needs permission to access the motion
             API, and once granted activates the cannon-es physics engine. The
             physics 'arena' and three.js camera are then rotated around the
-            center of the scene to match the device orientation, allowing
-            the ball to interact with the scene as though it were inside.
+            center of the scene to match the device orientation, allowing the
+            ball to interact with the scene as though it were inside.
           </p>
         </div>
       </div>
