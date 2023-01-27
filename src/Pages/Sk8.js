@@ -15,17 +15,17 @@ export default function Sk8() {
       </div>
       <div id="kickflip">
         <video autoPlay muted loop>
-          <source src="../media/kickflip.webm" type="video/mp4" />
+          <source src="../media/sk8/kickflip.webm" type="video/mp4" />
           This browser doesn't support video tag.
         </video>
       </div>
       <div className="hero-img">
-        <img src="../media/sk8-bearing.png" alt=""></img>
+        <img src="../media/sk8/sk8-bearing.png" alt=""></img>
       </div>
       <div id="sk8-wheel-array">
         <div className="sk8-wheel-container">
           <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8-v2.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
           <video
@@ -35,13 +35,13 @@ export default function Sk8() {
             loop
             height={"200px"}
           >
-            <source src="../media/sk8.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
         </div>
         <div className="sk8-wheel-container">
           <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8-v2.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
           <video
@@ -51,13 +51,13 @@ export default function Sk8() {
             loop
             height={"200px"}
           >
-            <source src="../media/sk8.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
         </div>
         <div className="sk8-wheel-container">
           <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8-v2.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
           <video
@@ -67,13 +67,13 @@ export default function Sk8() {
             loop
             height={"200px"}
           >
-            <source src="../media/sk8.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
         </div>
         <div className="sk8-wheel-container">
           <video className="sk8-wheel" autoPlay muted loop height={"200px"}>
-            <source src="../media/sk8-v2.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8-v2.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
           <video
@@ -83,14 +83,14 @@ export default function Sk8() {
             loop
             height={"200px"}
           >
-            <source src="../media/sk8.webm" type="video/mp4" />
+            <source src="../media/sk8/sk8.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
         </div>
       </div>
       <div className="double-img">
-        <img src="../media/sk8-loading.png" alt=""></img>
-        <img src="../media/sk8-ridges.png" alt=""></img>
+        <img src="../media/sk8/sk8-loading.png" alt=""></img>
+        <img src="../media/sk8/sk8-ridges.png" alt=""></img>
       </div>
     </>
   );

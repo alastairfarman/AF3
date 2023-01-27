@@ -5,6 +5,7 @@ body {
   font-variation-settings: "wght" 300, "wdth" 55, "ital" 0;
   background-color: #f8f8f8;
   cursor: url(../public/media/cursors/cursor.png) 15 15, auto;
+  color: #222222;
 }
 
 h1 {
@@ -20,7 +21,6 @@ p {
 
 * {
   box-sizing: border-box;
-  color: #222222;
 }
 
 #root {
@@ -57,6 +57,8 @@ p {
   transition: filter 2s;
 }
 
+#sunglasses-iframe{}
+
 @font-face {
   font-family: "GT-Flexa";
   src: url("../public/GT-Flexa-Trial-VF.woff2") format("woff2-variations");
@@ -80,8 +82,8 @@ p {
 }
 
 .letter {
-  transition: font-size 3s ease-in-out, font-variation-settings 0.3s ease-in-out,
-    transform 0.3s;
+  transition: font-size 3s ease-in-out, font-variation-settings 0.2s,
+    transform 0.8s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,40 +156,13 @@ p {
   background-color: rgba(34, 34, 34, 0.05);
   transition: background-color 1s;
 }
-/* 
-#nav-section-1 {
-  grid-column-start: 2;
-  grid-column-end: 6;
-}
-#nav-section-2 {
-  grid-column-start: 4;
-  grid-column-end: 10;
-}
-
-#nav-section-3 {
-  grid-row-start: 2;
-  grid-column-start: 11;
-  grid-column-end: 17;
-}
-#nav-section-4 {
-  grid-column-start: 14;
-  grid-column-end: 17;
-} */
-
-#frontend {
-}
-#threed {
-}
-#retouch {
-}
-#photo {
-}
 
 .cat-hover {
-  background: var(--gradient);
+  color: #222222;
+  /* background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 #categories {
@@ -206,6 +181,7 @@ p {
   font-size: 1.5rem;
   text-transform: uppercase;
   transition: height 1s, opacity 1.5s ease-in-out;
+  color: rgba(34, 34, 34, 0.1);
 }
 
 .page {
@@ -252,6 +228,13 @@ p {
   white-space: nowrap;
   overflow: hidden;
   transition: height 1s, opacity 1.5s ease-in-out;
+}
+
+.add-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-spacer {
@@ -313,22 +296,40 @@ p {
   padding: 4rem;
 }
 
+.triple-img {
+  display: flex;
+  width: 100vw;
+justify-content: space-between;}
+
+.triple-img img {
+  object-fit: contain;
+  max-width: 30%;
+
+}
+
 .tech {
   display: flex;
 }
 
-.bullet{
+.bullet {
   background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
-.link:hover{
+.link:hover {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link:visited {
   background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -395,7 +396,7 @@ p {
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-image: url(../public/media/kickflip-bg-layers.svg);
+  background-image: url(../public/media/sk8/kickflip-bg-layers.svg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

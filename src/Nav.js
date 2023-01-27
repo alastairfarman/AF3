@@ -51,62 +51,99 @@ export default function Nav() {
       document.getElementById("nav").style.textTransform = "capitalize";
       const defaultFontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
       const fontVariationSettingsTwo = `"wght" 800, "wdth" 50, "ital" 0`;
+      const adjacentSettings = `"wght" 600, "wdth" 30, "ital" 0`;
 
       const settingsArray = [
         defaultFontVariationSettings,
         fontVariationSettingsTwo,
       ];
 
-      const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-
-      async function load() {
-        for (var i = 0; i < letters.length; i++) {
-          if (letters[i].id !== "dot" && letters[i].id !== "about") {
-            letters[i].style.fontVariationSettings = settingsArray[1];
-            reverseLetter(letters[i]);
-          }
-          await timer(100);
-        }
+      for (var i = 0; i < letters.length; i++) {
+        if (letters[i].id !== "dot" && letters[i].id !== "about") {
+        letters[i].addEventListener("mouseenter", (e) => {
+          e.target.style.fontVariationSettings = fontVariationSettingsTwo;
+          e.target.previousElementSibling.style.fontVariationSettings =
+            adjacentSettings;
+          e.target.nextElementSibling.style.fontVariationSettings =
+            adjacentSettings;
+        });
+        letters[i].addEventListener("mouseleave", (e) => {
+          e.target.style.fontVariationSettings = defaultFontVariationSettings;
+          e.target.previousElementSibling.style.fontVariationSettings =
+            defaultFontVariationSettings;
+          e.target.nextElementSibling.style.fontVariationSettings =
+            defaultFontVariationSettings;
+        });}
       }
 
-      load();
+      // const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
-      function reverseLetter(letter) {
-        setTimeout(() => {
-          letter.style.fontVariationSettings = settingsArray[0];
-        }, 300);
-      }
+      // async function load() {
+      //   for (var i = 0; i < letters.length; i++) {
+      //     if (letters[i].id !== "dot" && letters[i].id !== "about") {
+      //       letters[i].style.fontVariationSettings = settingsArray[1];
+      //       reverseLetter(letters[i]);
+      //     }
+      //     await timer(100);
+      //   }
+      // }
+
+      // load();
+
+      // function reverseLetter(letter) {
+      //   setTimeout(() => {
+      //     letter.style.fontVariationSettings = settingsArray[0];
+      //   }, 300);
+      // }
     }
     function changeNameNavElementFrauncesIt() {
       document.getElementById("nav").style.textTransform = "capitalize";
 
       const defaultFontVariationSettings = `"opsz" 144, "wght" 900, "SOFT" 100, "WONK" 1`;
-      const fontVariationSettingsTwo = `"opsz" 144, "wght" 900, "SOFT" 0, "WONK" 1`;
+      const fontVariationSettingsTwo = `"opsz" 9, "wght" 900, "SOFT" 100, "WONK" 1`;
+      const adjacentSettings = `"opsz" 50, "wght" 900, "SOFT" 100, "WONK" 1`;
 
       const settingsArray = [
         defaultFontVariationSettings,
         fontVariationSettingsTwo,
       ];
 
-      const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-
-      async function load() {
-        for (var i = 0; i < letters.length; i++) {
-          if (letters[i].id !== "dot" && letters[i].id !== "about") {
-            letters[i].style.fontVariationSettings = settingsArray[1];
-            reverseLetter(letters[i]);
-          }
-          await timer(100);
-        }
+      for (var i = 0; i < letters.length; i++) {if (letters[i].id !== "dot" && letters[i].id !== "about") {
+        letters[i].addEventListener("mouseenter", (e) => {
+          e.target.style.fontVariationSettings = fontVariationSettingsTwo;
+          e.target.previousElementSibling.style.fontVariationSettings =
+            adjacentSettings;
+          e.target.nextElementSibling.style.fontVariationSettings =
+            adjacentSettings;
+        });
+        letters[i].addEventListener("mouseleave", (e) => {
+          e.target.style.fontVariationSettings = defaultFontVariationSettings;
+          e.target.previousElementSibling.style.fontVariationSettings =
+            defaultFontVariationSettings;
+          e.target.nextElementSibling.style.fontVariationSettings =
+            defaultFontVariationSettings;
+        });}
       }
 
-      load();
+      // const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
-      function reverseLetter(letter) {
-        setTimeout(() => {
-          letter.style.fontVariationSettings = settingsArray[0];
-        }, 300);
-      }
+      // async function load() {
+      //   for (var i = 0; i < letters.length; i++) {
+      //     if (letters[i].id !== "dot" && letters[i].id !== "about") {
+      //       letters[i].style.fontVariationSettings = settingsArray[1];
+      //       reverseLetter(letters[i]);
+      //     }
+      //     await timer(100);
+      //   }
+      // }
+
+      // load();
+
+      // function reverseLetter(letter) {
+      //   setTimeout(() => {
+      //     letter.style.fontVariationSettings = settingsArray[0];
+      //   }, 300);
+      // }
     }
 
     click_ref.current = handleDotClick;
@@ -138,10 +175,6 @@ export default function Nav() {
 
   function categoryHoverTrue(category) {
     const categories = document.getElementById("categories");
-    // const sectionOne = document.getElementById("nav-section-1");
-    // const sectionTwo = document.getElementById("nav-section-2");
-    // const sectionThree = document.getElementById("nav-section-3");
-    // const sectionFour = document.getElementById("nav-section-4");
     const frontendCat = document.getElementById("frontend");
     const threedCat = document.getElementById("threed");
     const retouchCat = document.getElementById("retouch");
@@ -150,7 +183,6 @@ export default function Nav() {
     categories.style.height = "2rem";
     categories.style.opacity = "100%";
     staticBar.style.backgroundColor = "rgba(244,244,244,1)";
-    // staticBar.style.backdropFilter = "blur(10px)";
 
     switch (category) {
       case "frontend":
