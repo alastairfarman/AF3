@@ -18,7 +18,7 @@ function App() {
     <>
      <Nav/>
       <Routes>
-        <Route exact index element={<Content/>}/>
+        <Route exact index path='' element={<Content/>}/>
         <Route exact path="performance-physique-bmi-calculator" element={<Performance/>}/>
         <Route exact path="soccerball" element={<Soccerball/>}/>
         <Route exact path="sunglasses-product-visualisation" element={<Sunglasses/>}/>

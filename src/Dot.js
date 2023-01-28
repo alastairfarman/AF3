@@ -26,13 +26,13 @@ export default function Dot() {
           stroke: "rgb(0, 0, 0)",
           strokeWidth: "0px",
           paintOrder: "fill",
-          fill: "url(#gradient-0)",
+          fill: "#222222",
           fillRule: "nonzero",
         }}
         cx={250}
         cy={250}
-        rx="70"
-        ry="70"
+        rx="50"
+        ry="50"
       />
       <path
         d="M 405 250 A 155 155 0 0 1 250 405 A 155 155 0 0 1 95 250 A 155 155 0 0 1 250 95 A 155 155 0 0 1 405 250 Z"
@@ -41,14 +41,14 @@ export default function Dot() {
           paintOrder: "fill",
           fillRule: "nonzero",
           fill: "none",
-          strokeWidth: "0px",
+          strokeWidth: "0px"
         }}
         id="path-1"
       />
       <text
         id="CLICKME1"
         style={{
-          fill: "url(#gradient-0)",
+          fill: "#222222",
           fontFamily: '"GT-Flexa"',
           fontSize: "124px",
           whiteSpace: "prex",
@@ -75,7 +75,7 @@ export default function Dot() {
       <text
         id="CLICKME2"
         style={{
-          fill: "url(#gradient-0)",
+          fill: "#222222",
           fontFamily: '"GT-Flexa"',
           fontSize: "124px",
           whiteSpace: "pre",

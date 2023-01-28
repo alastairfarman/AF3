@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectInfo from "./ProjectInfo";
 import Dot from "./Dot";
-import AboutDot from "./AboutDot";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -12,9 +11,10 @@ export default function Nav() {
 
   const click_ref = useRef(null);
 
+  let fontFamilyIndex = 0;
+
   useEffect(() => {
     const letters = document.getElementsByClassName("letter");
-    let fontFamilyIndex = 0;
 
     const fontFamilies = ["GT-Flexa", "Fraunces-It"];
 
@@ -53,48 +53,33 @@ export default function Nav() {
       const fontVariationSettingsTwo = `"wght" 800, "wdth" 50, "ital" 0`;
       const adjacentSettings = `"wght" 600, "wdth" 30, "ital" 0`;
 
-      const settingsArray = [
-        defaultFontVariationSettings,
-        fontVariationSettingsTwo,
-      ];
-
       for (var i = 0; i < letters.length; i++) {
         if (letters[i].id !== "dot" && letters[i].id !== "about") {
-        letters[i].addEventListener("mouseenter", (e) => {
-          e.target.style.fontVariationSettings = fontVariationSettingsTwo;
-          e.target.previousElementSibling.style.fontVariationSettings =
-            adjacentSettings;
-          e.target.nextElementSibling.style.fontVariationSettings =
-            adjacentSettings;
-        });
-        letters[i].addEventListener("mouseleave", (e) => {
-          e.target.style.fontVariationSettings = defaultFontVariationSettings;
-          e.target.previousElementSibling.style.fontVariationSettings =
-            defaultFontVariationSettings;
-          e.target.nextElementSibling.style.fontVariationSettings =
-            defaultFontVariationSettings;
-        });}
+          letters[i].addEventListener("mouseenter", (e) => {
+            e.target.style.fontVariationSettings = fontVariationSettingsTwo;
+
+            if (
+              e.target &&
+              e.target.previousElementSibling &&
+              e.target.parentNode &&
+              e.target.previousElementSibling === e.target.parentNode.firstChild
+            ) {
+            } else {
+              e.target.previousElementSibling.style.fontVariationSettings =
+                adjacentSettings;
+            }
+            e.target.nextElementSibling.style.fontVariationSettings =
+              adjacentSettings;
+          });
+          letters[i].addEventListener("mouseleave", (e) => {
+            e.target.style.fontVariationSettings = defaultFontVariationSettings;
+            e.target.previousElementSibling.style.fontVariationSettings =
+              defaultFontVariationSettings;
+            e.target.nextElementSibling.style.fontVariationSettings =
+              defaultFontVariationSettings;
+          });
+        }
       }
-
-      // const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-
-      // async function load() {
-      //   for (var i = 0; i < letters.length; i++) {
-      //     if (letters[i].id !== "dot" && letters[i].id !== "about") {
-      //       letters[i].style.fontVariationSettings = settingsArray[1];
-      //       reverseLetter(letters[i]);
-      //     }
-      //     await timer(100);
-      //   }
-      // }
-
-      // load();
-
-      // function reverseLetter(letter) {
-      //   setTimeout(() => {
-      //     letter.style.fontVariationSettings = settingsArray[0];
-      //   }, 300);
-      // }
     }
     function changeNameNavElementFrauncesIt() {
       document.getElementById("nav").style.textTransform = "capitalize";
@@ -103,47 +88,32 @@ export default function Nav() {
       const fontVariationSettingsTwo = `"opsz" 9, "wght" 900, "SOFT" 100, "WONK" 1`;
       const adjacentSettings = `"opsz" 50, "wght" 900, "SOFT" 100, "WONK" 1`;
 
-      const settingsArray = [
-        defaultFontVariationSettings,
-        fontVariationSettingsTwo,
-      ];
-
-      for (var i = 0; i < letters.length; i++) {if (letters[i].id !== "dot" && letters[i].id !== "about") {
-        letters[i].addEventListener("mouseenter", (e) => {
-          e.target.style.fontVariationSettings = fontVariationSettingsTwo;
-          e.target.previousElementSibling.style.fontVariationSettings =
-            adjacentSettings;
-          e.target.nextElementSibling.style.fontVariationSettings =
-            adjacentSettings;
-        });
-        letters[i].addEventListener("mouseleave", (e) => {
-          e.target.style.fontVariationSettings = defaultFontVariationSettings;
-          e.target.previousElementSibling.style.fontVariationSettings =
-            defaultFontVariationSettings;
-          e.target.nextElementSibling.style.fontVariationSettings =
-            defaultFontVariationSettings;
-        });}
+      for (var i = 0; i < letters.length; i++) {
+        if (letters[i].id !== "dot" && letters[i].id !== "about") {
+          letters[i].addEventListener("mouseenter", (e) => {
+            e.target.style.fontVariationSettings = fontVariationSettingsTwo;
+            if (
+              e.target &&
+              e.target.previousElementSibling &&
+              e.target.parentNode &&
+              e.target.previousElementSibling === e.target.parentNode.firstChild
+            ) {
+            } else {
+              e.target.previousElementSibling.style.fontVariationSettings =
+                adjacentSettings;
+            }
+            e.target.nextElementSibling.style.fontVariationSettings =
+              adjacentSettings;
+          });
+          letters[i].addEventListener("mouseleave", (e) => {
+            e.target.style.fontVariationSettings = defaultFontVariationSettings;
+            e.target.previousElementSibling.style.fontVariationSettings =
+              defaultFontVariationSettings;
+            e.target.nextElementSibling.style.fontVariationSettings =
+              defaultFontVariationSettings;
+          });
+        }
       }
-
-      // const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-
-      // async function load() {
-      //   for (var i = 0; i < letters.length; i++) {
-      //     if (letters[i].id !== "dot" && letters[i].id !== "about") {
-      //       letters[i].style.fontVariationSettings = settingsArray[1];
-      //       reverseLetter(letters[i]);
-      //     }
-      //     await timer(100);
-      //   }
-      // }
-
-      // load();
-
-      // function reverseLetter(letter) {
-      //   setTimeout(() => {
-      //     letter.style.fontVariationSettings = settingsArray[0];
-      //   }, 300);
-      // }
     }
 
     click_ref.current = handleDotClick;
@@ -154,7 +124,7 @@ export default function Nav() {
 
       async function load() {
         for (var i = 0; i < letters.length; i++) {
-          if (letters[i].id !== "dot" && letters[i].id !== "about") {
+          if (letters[i].id !== "dot") {
             letters[i].style.transform = "translate(0, -500px)";
             slideBackLetter(letters[i]);
           }
@@ -254,6 +224,13 @@ export default function Nav() {
     document.getElementById("nav").style.filter = "hue-rotate(0deg)";
   }
 
+  function handleAboutHover(e) {
+
+  }
+
+  function handleAboutStopHover(e) {
+  }
+
   return (
     <>
       <div id="static-bar">
@@ -261,11 +238,13 @@ export default function Nav() {
           <span
             className="letter"
             id="about"
-            onClick={() => click_ref.current()}
-            onMouseEnter={handleDotHover}
-            onMouseLeave={handleDotStopHover}
+            onMouseEnter={handleAboutHover}
+            onMouseLeave={handleAboutStopHover}
+            onClick={() => navigate("")}
           >
-            <AboutDot />
+            <div>HOME</div>
+            <div>ABOUT</div>
+            <div>CONTACT</div>
           </span>
           <span
             className="letter"
@@ -417,26 +396,6 @@ export default function Nav() {
           >
             <Dot />
           </span>
-          {/* <span
-            id="nav-section-1"
-            className="nav-section"
-            data-section="frontend"
-          ></span>
-          <span
-            id="nav-section-2"
-            className="nav-section"
-            data-section="3d"
-          ></span>
-          <span
-            id="nav-section-3"
-            className="nav-section"
-            data-section="retouch"
-          ></span>
-          <span
-            id="nav-section-4"
-            className="nav-section"
-            data-section="photo"
-          ></span> */}
           <div id="categories">
             <span id="frontend">Frontend</span>
             <span id="threed">3D</span>

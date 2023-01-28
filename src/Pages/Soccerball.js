@@ -12,16 +12,18 @@ export default function Soccerball() {
               <img src="../tech-icons/blender.png" alt="Blender logo"></img>
             </div>
           </div>
-          <h4>REACT, THREE.JS, CANNON-ES, BLENDER</h4>
-          <div>
-            <a
-              href="https://alastairfarman.github.io/soccerball/"
-              target="_blank"
-              rel="noreferrer"
-              className="link"
-            >
-              OPEN IN NEW WINDOW<span className="bullet"> &bull;</span>
-            </a>
+          <div className="add-info">
+            <div>
+              <a
+                href="https://alastairfarman.github.io/soccerball/"
+                target="_blank"
+                rel="noreferrer"
+                className="link"
+              >
+                <span className="bullet">&bull; </span>OPEN IN NEW WINDOW
+              </a>
+            </div>
+            <h4>REACT, THREE.JS, CANNON-ES, BLENDER</h4>
           </div>
           <p>
             Soccerball is a simple project exploring three.js, cannon-es and

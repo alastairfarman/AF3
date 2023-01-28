@@ -1,6 +1,6 @@
 export default function Performance() {
   return (
-    <>
+    <div className="fade-in">
       <div className="nav-spacer"></div>
       <div className="header-container">
         <div className="header">
@@ -53,6 +53,6 @@ export default function Performance() {
         </div>
         <img src="../media/pp-02.png" alt=""></img>
       </div>
-    </>
+    </div>
   );
 }
