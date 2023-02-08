@@ -39,7 +39,7 @@ function App() {
         <Route exact path="retouch-3" element={<Retouch3/>}/>
         <Route exact path="photo-1" element={<Photo1/>}/>
         <Route exact path="photo-2" element={<Photo2/>}/>
-        <Route exact path="extras-3" element={<Photo3/>}/>
+        <Route exact path="photo-3" element={<Photo3/>}/>
       </Routes>
     </>
   );

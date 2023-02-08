@@ -359,7 +359,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Performance Physique"
+            data-project="Photo 1"
             data-category="retouch photo"
           >
             m
@@ -369,7 +369,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Performance Physique"
+            data-project="Photo 2"
             data-category="retouch photo"
           >
             a
@@ -379,7 +379,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Performance Physique"
+            data-project="Photo 3"
             data-category="retouch photo"
           >
             n
