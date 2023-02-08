@@ -22,7 +22,7 @@ export default function Performance() {
                 <span className="bullet">&bull; </span>OPEN IN NEW WINDOW
               </a>
             </div>
-            <h4>REACT, FORMSPARK</h4>
+            <h4>REACT, FORMSPARK, P5</h4>
           </div>
           <p>
             The Performance Physique BMI Calculator was commissioned by Grow
@@ -52,6 +52,22 @@ export default function Performance() {
           </p>
         </div>
         <img src="../media/pp-02.png" alt=""></img>
+      </div>
+      <div className="single-img">
+        <video autoPlay muted loop width={"400px"}>
+          <source src="../media/pp-p5.webm" type="video/mp4" />
+          This browser doesn't support video tag.
+        </video>
+        <div className="image-desc">
+          <p>
+            This site is still in development, with the next feature being a P5
+            built interactive calorie demonstration that uses the data from the
+            BMI calculation to display a graph which suggests how the user can
+            plan a daily calorie intake while limiting the total calories for
+            the week. While it is currently fully functional, the best
+            implementation for user experience hasn't currently been decided.
+          </p>
+        </div>
       </div>
     </div>
   );

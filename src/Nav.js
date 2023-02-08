@@ -11,9 +11,9 @@ export default function Nav() {
 
   const click_ref = useRef(null);
 
-  let fontFamilyIndex = 0;
-
   useEffect(() => {
+    let fontFamilyIndex = 0;
+
     const letters = document.getElementsByClassName("letter");
 
     const fontFamilies = ["GT-Flexa", "Fraunces-It"];
@@ -224,12 +224,9 @@ export default function Nav() {
     document.getElementById("nav").style.filter = "hue-rotate(0deg)";
   }
 
-  function handleAboutHover(e) {
+  function handleAboutHover(e) {}
 
-  }
-
-  function handleAboutStopHover(e) {
-  }
+  function handleAboutStopHover(e) {}
 
   return (
     <>
@@ -281,7 +278,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="A Skincare Product Visualisation"
+            data-project="Skincare Product Visualisation"
             data-category="frontend 3d"
           >
             s
@@ -311,7 +308,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="'A core memory'"
+            data-project="Something"
             data-category="3d"
           >
             i
@@ -321,7 +318,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="'Drive'"
+            data-project="Drive"
             data-category="3d"
           >
             r
@@ -332,7 +329,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Performance Physique"
+            data-project="Retouch 1"
             data-category="retouch"
           >
             F
@@ -342,7 +339,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Performance Physique"
+            data-project="Retouch 2"
             data-category="retouch"
           >
             a
@@ -352,7 +349,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Performance Physique"
+            data-project="Retouch 3"
             data-category="retouch"
           >
             r

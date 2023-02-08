@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 
 export default function Sunglasses() {
   useEffect(() => {
-    document
-      .getElementById("root")
-      .setAttribute("style", "background-color: #000000; color: #eeeeee");
+    // document
+    //   .getElementById("root")
+    //   .setAttribute("style", "background-color: #000000; color: #eeeeee");
 
-    return () => {
-      document.getElementById("root").setAttribute("style", null);
-    };
+    // return () => {
+    //   document.getElementById("root").setAttribute("style", null);
+    // };
   });
 
   const buttonRef = useRef();
@@ -95,15 +95,15 @@ export default function Sunglasses() {
           </p>
         </div>
       </div>
-      <div className="small-img" style={{ backgroundColor: "black" }}>
+      <div className="small-img" >
         <img className="" src="../media/sun/sunmodel.png" alt="" />
       </div>
-      <div className="triple-img" style={{ backgroundColor: "black" }}>
+      <div className="triple-img" >
         <img className="" src="../media/sun/black-31.png" alt="" />
         <img className="" src="../media/sun/tort-31.png" alt="" />
         <img className="" src="../media/sun/rose-31.png" alt="" />
       </div>
-      <div className="single-img" style={{ backgroundColor: "black" }}>
+      <div className="single-img">
         <video autoPlay muted loop>
           <source src="../media/sun/sun.webm" type="video/mp4" />
           This browser doesn't support video tag.
