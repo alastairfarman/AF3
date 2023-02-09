@@ -22,6 +22,10 @@ export default function Retouch1() {
         <img src="../media/MJ5/1.jpg" alt="" />
         <img src="../media/MJ5/2.jpg" alt="" />
       </div>
+      <div className="single-img">
+        <img src="../media/MJ5/3.jpg" alt="" />
+        <img src="../media/MJ5/4.jpg" alt="" />
+      </div>
     </>
   );
 }

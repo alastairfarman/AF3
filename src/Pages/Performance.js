@@ -6,10 +6,10 @@ export default function Performance() {
         <div className="header">
           <div className="title">
             <h1>Performance Physique BMI Calculator</h1>
-            <div className="tech">
+            {/* <div className="tech">
               <img src="../tech-icons/React.svg" alt="React Logo"></img>
               <img src="../tech-icons/formspark.svg" alt="Formspark Logo"></img>
-            </div>
+            </div> */}
           </div>
           <div className="add-info">
             <div>

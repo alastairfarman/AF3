@@ -21,11 +21,100 @@ export default function Dot() {
           <stop style={{ stopColor: "rgba(253, 187, 45, 1)" }} offset={1} />
         </linearGradient>
       </defs>
+
       <ellipse
+        className="petal"
         style={{
           stroke: "rgb(0, 0, 0)",
           strokeWidth: "0px",
           paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={200}
+        cy={165}
+        rx="60"
+        ry="60"
+      />
+      <ellipse
+        className="petal"
+        style={{
+          stroke: "rgb(0, 0, 0)",
+          strokeWidth: "0px",
+          paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={300}
+        cy={165}
+        rx="60"
+        ry="60"
+      />
+      <ellipse
+        className="petal"
+        style={{
+          stroke: "rgb(0, 0, 0)",
+          strokeWidth: "0px",
+          paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={350}
+        cy={250}
+        rx="60"
+        ry="60"
+      />
+
+      <ellipse
+        className="petal"
+        style={{
+          stroke: "rgb(0, 0, 0)",
+          strokeWidth: "0px",
+          paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={150}
+        cy={250}
+        rx="60"
+        ry="60"
+      />
+
+      <ellipse
+        className="petal"
+        style={{
+          stroke: "rgb(0, 0, 0)",
+          strokeWidth: "0px",
+          paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={200}
+        cy={335}
+        rx="60"
+        ry="60"
+      />
+      <ellipse
+        className="petal"
+        style={{
+          stroke: "rgb(0, 0, 0)",
+          strokeWidth: "0px",
+          paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={300}
+        cy={335}
+        rx="60"
+        ry="60"
+      />
+
+<ellipse
+      className="big-circle"
+        style={{
+          stroke: "rgb(244,244,244)",
+          strokeWidth: "50px",
+          paintOrder: "stroke",
           fill: "#222222",
           fillRule: "nonzero",
         }}
@@ -34,6 +123,8 @@ export default function Dot() {
         rx="50"
         ry="50"
       />
+
+
       <path
         d="M 405 250 A 155 155 0 0 1 250 405 A 155 155 0 0 1 95 250 A 155 155 0 0 1 250 95 A 155 155 0 0 1 405 250 Z"
         style={{
@@ -41,7 +132,7 @@ export default function Dot() {
           paintOrder: "fill",
           fillRule: "nonzero",
           fill: "none",
-          strokeWidth: "0px"
+          strokeWidth: "0px",
         }}
         id="path-1"
       />

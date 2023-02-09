@@ -7,9 +7,9 @@ export default function Sk8() {
           <div className="header">
             <div className="title">
               <h1>Sk8</h1>
-              <div className="tech">
+              {/* <div className="tech">
                 <img src="../tech-icons/blender.png" alt="Blender logo"></img>
-              </div>
+              </div> */}
             </div>
             <p>
               Sk8 is a personal project to further explore modelling techniques,

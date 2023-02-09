@@ -67,11 +67,11 @@ export default function Sunglasses() {
         <div className="header">
           <div className="title">
             <h1>Sunglasses Product Visualisation</h1>
-            <div className="tech">
+            {/* <div className="tech">
               <img src="../tech-icons/blender.png" alt="Blender logo"></img>
               <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
               <img src="../tech-icons/needle.png" alt="Needle logo"></img>
-            </div>
+            </div> */}
           </div>
           <div className="add-info">
             <div>

@@ -19,11 +19,10 @@ export default function Nav() {
     const fontFamilies = ["GT-Flexa", "Fraunces-It"];
 
     function selectFont(fontFamilyIndex) {
+      applyFont(fontFamilyIndex);
       if (fontFamilyIndex === 0) {
-        applyFont(fontFamilyIndex);
         setTimeout(() => changeNameNavElementFlexa(), 2000);
       } else if (fontFamilyIndex === 1) {
-        applyFont(fontFamilyIndex);
         setTimeout(() => changeNameNavElementFrauncesIt(), 2000);
       }
     }
@@ -37,7 +36,7 @@ export default function Nav() {
           if (fontFamilyIndex === 1) {
             letters[
               i
-            ].style.fontVariationSettings = `"opsz" 144, "wght" 900, "SOFT" 100, "WONK" 1`;
+            ].style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
           } else {
             letters[
               i
@@ -84,9 +83,9 @@ export default function Nav() {
     function changeNameNavElementFrauncesIt() {
       document.getElementById("nav").style.textTransform = "capitalize";
 
-      const defaultFontVariationSettings = `"opsz" 144, "wght" 900, "SOFT" 100, "WONK" 1`;
+      const defaultFontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
       const fontVariationSettingsTwo = `"opsz" 9, "wght" 900, "SOFT" 100, "WONK" 1`;
-      const adjacentSettings = `"opsz" 50, "wght" 900, "SOFT" 100, "WONK" 1`;
+      const adjacentSettings = `"opsz" 144, "wght" 750, "SOFT" 100, "WONK" 1`;
 
       for (var i = 0; i < letters.length; i++) {
         if (letters[i].id !== "dot" && letters[i].id !== "about") {
@@ -121,6 +120,41 @@ export default function Nav() {
       fontFamilyIndex === 1 ? (fontFamilyIndex = 0) : fontFamilyIndex++;
 
       const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+
+      const petals = document.getElementsByClassName("petal");
+
+      async function loadflower() {
+        let text = document.getElementById("CLICKME1");
+        let text2 = document.getElementById("CLICKME2");
+
+        if (petals[0].style.transform === "scale(1)") {
+          text.style.fontFamily = "GT-Flexa";
+          text.style.fontSize = "124px";
+          text.style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
+          text2.style.fontFamily = "GT-Flexa";
+          text2.style.fontSize = "124px";
+          text2.style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
+
+          for (let i = 0; i < petals.length; i++) {
+            petals[i].style.transform = "scale(0)";
+            await timer(150);
+          }
+        } else {
+          text.style.fontFamily = "Fraunces-IT";
+          text.style.fontSize = "90px";
+          text.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
+          text2.style.fontFamily = "Fraunces-IT";
+          text2.style.fontSize = "90px";
+          text2.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
+
+          for (let i = 0; i < petals.length; i++) {
+            petals[i].style.transform = "scale(1)";
+            await timer(150);
+          }
+        }
+      }
+
+      loadflower();
 
       async function load() {
         for (var i = 0; i < letters.length; i++) {
@@ -217,12 +251,8 @@ export default function Nav() {
     navigate(pathname);
   }
 
-  function handleDotHover() {
-    document.getElementById("nav").style.filter = "hue-rotate(180deg)";
-  }
-  function handleDotStopHover() {
-    document.getElementById("nav").style.filter = "hue-rotate(0deg)";
-  }
+  function handleDotHover() {}
+  function handleDotStopHover() {}
 
   function handleAboutHover(e) {}
 

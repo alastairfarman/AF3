@@ -425,3 +425,11 @@ a:visited {
     opacity: 100%;
   }
 }
+
+
+.petal{
+  transform-origin: 55% 50%;
+  z-index: -1;
+ transform: scale(0.2);
+ transition: transform 0.5s;
+}

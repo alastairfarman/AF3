@@ -7,11 +7,11 @@ export default function Soccerball() {
           <div className="header">
             <div className="title">
               <h1>Soccerball</h1>
-              <div className="tech">
+              {/* <div className="tech">
                 <img src="../tech-icons/React.svg" alt="React Logo"></img>
                 <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
                 <img src="../tech-icons/blender.png" alt="Blender logo"></img>
-              </div>
+              </div> */}
             </div>
             <div className="add-info">
               <div>
