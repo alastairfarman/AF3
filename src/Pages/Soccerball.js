@@ -34,7 +34,7 @@ export default function Soccerball() {
             </p>
           </div>
         </div>
-        <div className="single-img">
+        <div className="single-img-txt">
           <video autoPlay muted loop>
             <source src="../media/soccerball.webm" type="video/mp4" />
             This browser doesn't support video tag.
@@ -49,7 +49,7 @@ export default function Soccerball() {
             </p>
           </div>
         </div>
-        <div className="single-img">
+        <div className="single-img-txt">
           <div className="image-desc">
             <p>
               The ball is a modified BlenderKit model imported into three.js
@@ -60,7 +60,7 @@ export default function Soccerball() {
           </div>
           <img src="../media/soccerball-3.png" alt=""></img>
         </div>
-        <div className="single-img">
+        <div className="single-img-txt">
           <img src="../media/soccerball-2.png" alt=""></img>
           <div className="image-desc">
             <p>

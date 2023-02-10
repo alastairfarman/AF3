@@ -35,7 +35,7 @@ export default function Performance() {
           </p>
         </div>
       </div>
-      <div className="single-img">
+      <div className="single-img-txt">
         <img src="../media/pp-01.png" alt=""></img>
         <div className="image-desc">
           <p>
@@ -44,7 +44,7 @@ export default function Performance() {
           </p>
         </div>
       </div>
-      <div className="single-img">
+      <div className="single-img-txt">
         <div className="image-desc">
           <p>
             React Hooks allowed for a smoother, more fluid user experience while

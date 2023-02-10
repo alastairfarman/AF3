@@ -5,7 +5,6 @@ export default function Sunglasses() {
     // document
     //   .getElementById("root")
     //   .setAttribute("style", "background-color: #000000; color: #eeeeee");
-
     // return () => {
     //   document.getElementById("root").setAttribute("style", null);
     // };
@@ -95,17 +94,23 @@ export default function Sunglasses() {
           </p>
         </div>
       </div>
-      <div className="small-img" >
+      <div className="small-img">
         <img className="" src="../media/sun/sunmodel.png" alt="" />
       </div>
-      <div className="triple-img" >
+      <div className="single-img">
+        <img className="" src="../media/sun/sunnoies.png" alt="" />
+      </div>
+      <div className="triple-img">
         <img className="" src="../media/sun/black-31.png" alt="" />
         <img className="" src="../media/sun/tort-31.png" alt="" />
         <img className="" src="../media/sun/rose-31.png" alt="" />
       </div>
-      <div className="single-img">
+      <div className="single-img-txt">
         <video autoPlay muted loop>
-          <source src="../media/sun/sun.webm" type="video/mp4" />
+          <source
+            src="../media/sun/sun.webm"
+            type="video/mp4"
+          />
           This browser doesn't support video tag.
         </video>
         <div className="image-desc">

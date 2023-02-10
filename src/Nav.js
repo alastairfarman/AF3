@@ -160,9 +160,12 @@ export default function Nav() {
         for (var i = 0; i < letters.length; i++) {
           if (letters[i].id !== "dot") {
             letters[i].style.transform = "translate(0, -500px)";
+            letters[i].style.pointerEvents = "none";
+console.log(letters[i].style.pointerEvents)
             slideBackLetter(letters[i]);
           }
           await timer(50);
+
         }
       }
 
@@ -172,6 +175,10 @@ export default function Nav() {
         setTimeout(() => {
           selectFont(fontFamilyIndex);
           letter.style.transform = "translate(0, 0px)";
+
+          setTimeout(() => {
+            letter.style.pointerEvents = "auto";
+          },2000)
         }, 1500);
       }
     }
