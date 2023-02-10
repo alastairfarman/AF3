@@ -7,8 +7,8 @@ export default function Performance() {
           <div className="title">
             <h1>Performance Physique BMI Calculator</h1>
             {/* <div className="tech">
-              <img src="../tech-icons/React.svg" alt="React Logo"></img>
-              <img src="../tech-icons/formspark.svg" alt="Formspark Logo"></img>
+              <img src="./tech-icons/React.svg" alt="React Logo"></img>
+              <img src="./tech-icons/formspark.svg" alt="Formspark Logo"></img>
             </div> */}
           </div>
           <div className="add-info">
@@ -36,7 +36,7 @@ export default function Performance() {
         </div>
       </div>
       <div className="single-img-txt">
-        <img src="../media/pp-01.png" alt=""></img>
+        <img src="./media/pp-01.png" alt=""></img>
         <div className="image-desc">
           <p>
             The site was built using React as a one-page scroller with a header
@@ -51,11 +51,11 @@ export default function Performance() {
             also storing the input data form submission.
           </p>
         </div>
-        <img src="../media/pp-02.png" alt=""></img>
+        <img src="./media/pp-02.png" alt=""></img>
       </div>
       <div className="single-img">
         <video autoPlay muted loop width={"400px"}>
-          <source src="../media/pp-p5.webm" type="video/mp4" />
+          <source src="./media/pp-p5.webm" type="video/mp4" />
           This browser doesn't support video tag.
         </video>
         <div className="image-desc">

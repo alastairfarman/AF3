@@ -67,9 +67,9 @@ export default function Sunglasses() {
           <div className="title">
             <h1>Sunglasses Product Visualisation</h1>
             {/* <div className="tech">
-              <img src="../tech-icons/blender.png" alt="Blender logo"></img>
-              <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
-              <img src="../tech-icons/needle.png" alt="Needle logo"></img>
+              <img src="./tech-icons/blender.png" alt="Blender logo"></img>
+              <img src="./tech-icons/threejs.svg" alt="three.js logo"></img>
+              <img src="./tech-icons/needle.png" alt="Needle logo"></img>
             </div> */}
           </div>
           <div className="add-info">
@@ -95,20 +95,20 @@ export default function Sunglasses() {
         </div>
       </div>
       <div className="small-img">
-        <img className="" src="../media/sun/sunmodel.png" alt="" />
+        <img className="" src="./media/sun/sunmodel.png" alt="" />
       </div>
       <div className="single-img">
-        <img className="" src="../media/sun/sunnoies.png" alt="" />
+        <img className="" src="./media/sun/sunnoies.png" alt="" />
       </div>
       <div className="triple-img">
-        <img className="" src="../media/sun/black-31.png" alt="" />
-        <img className="" src="../media/sun/tort-31.png" alt="" />
-        <img className="" src="../media/sun/rose-31.png" alt="" />
+        <img className="" src="./media/sun/black-31.png" alt="" />
+        <img className="" src="./media/sun/tort-31.png" alt="" />
+        <img className="" src="./media/sun/rose-31.png" alt="" />
       </div>
       <div className="single-img-txt">
         <video autoPlay muted loop>
           <source
-            src="../media/sun/sun.webm"
+            src="./media/sun/sun.webm"
             type="video/mp4"
           />
           This browser doesn't support video tag.

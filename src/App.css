@@ -97,7 +97,7 @@ z-index: -20;
 }
 
 .letter {
-  transition: font-size 3s ease-in-out, font-variation-settings 0.2s,
+  transition: font-size 1s ease-in-out, font-variation-settings 0.2s,
     transform 0.8s;
   display: flex;
   justify-content: center;

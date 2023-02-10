@@ -8,9 +8,9 @@ export default function Soccerball() {
             <div className="title">
               <h1>Soccerball</h1>
               {/* <div className="tech">
-                <img src="../tech-icons/React.svg" alt="React Logo"></img>
-                <img src="../tech-icons/threejs.svg" alt="three.js logo"></img>
-                <img src="../tech-icons/blender.png" alt="Blender logo"></img>
+                <img src="./tech-icons/React.svg" alt="React Logo"></img>
+                <img src="./tech-icons/threejs.svg" alt="three.js logo"></img>
+                <img src="./tech-icons/blender.png" alt="Blender logo"></img>
               </div> */}
             </div>
             <div className="add-info">
@@ -36,7 +36,7 @@ export default function Soccerball() {
         </div>
         <div className="single-img-txt">
           <video autoPlay muted loop>
-            <source src="../media/soccerball.webm" type="video/mp4" />
+            <source src="./media/soccerball.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>
           <div className="image-desc">
@@ -58,10 +58,10 @@ export default function Soccerball() {
               glb file fails to load.
             </p>
           </div>
-          <img src="../media/soccerball-3.png" alt=""></img>
+          <img src="./media/soccerball-3.png" alt=""></img>
         </div>
         <div className="single-img-txt">
-          <img src="../media/soccerball-2.png" alt=""></img>
+          <img src="./media/soccerball-2.png" alt=""></img>
           <div className="image-desc">
             <p>
               The scene uses a simple directional light to create a shadow that

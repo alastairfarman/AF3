@@ -8,7 +8,7 @@ export default function Skincare() {
             <div className="title">
               <h1>Skincare Product Visualisation</h1>
               {/* <div className="tech">
-                <img src="../tech-icons/blender.png" alt="Blender logo"></img>
+                <img src="./tech-icons/blender.png" alt="Blender logo"></img>
               </div> */}
             </div>
             <div className="add-info">
