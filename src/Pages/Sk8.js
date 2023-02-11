@@ -26,6 +26,9 @@ export default function Sk8() {
           </video>
         </div>
         <div className="hero-img">
+          <img src="./media/sk8/deck2.png" alt=""></img>
+        </div>
+        <div className="hero-img">
           <img src="./media/sk8/deck.png" alt=""></img>
         </div>
         <div className="hero-img">
