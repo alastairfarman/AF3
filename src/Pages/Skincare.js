@@ -9,16 +9,13 @@ export default function Skincare() {
           <div className="header">
             <div className="title">
               <h1>Skincare Product Visualisation</h1>
-              {/* <div className="tech">
-                <img src="./tech-icons/blender.png" alt="Blender logo"></img>
-              </div> */}
             </div>
             <div className="add-info">
               <div>
                 <a
                   href="https://alastairfarman.github.io/a-skincare/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="link"
                 >
                   OPEN IN NEW WINDOW<span className="bullet"> &bull;</span>

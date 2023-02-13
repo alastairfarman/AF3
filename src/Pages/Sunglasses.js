@@ -1,21 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 export default function Sunglasses() {
-  useEffect(() => {
-    // document
-    //   .getElementById("root")
-    //   .setAttribute("style", "background-color: #000000; color: #eeeeee");
-    // return () => {
-    //   document.getElementById("root").setAttribute("style", null);
-    // };
-  });
-
   const buttonRef = useRef();
+  const sunElement = document.getElementById("sunglasses-iframe");
 
   function handleClick() {
-    const sunElement = document.getElementById("sunglasses-iframe");
-
     if (sunElement.classList.contains("to-front")) {
+      console.log(sunElement);
       sunElement.classList.remove("to-front");
       buttonRef.current.innerText = "SHOW";
     } else {
@@ -24,7 +15,15 @@ export default function Sunglasses() {
     }
   }
 
-  setTimeout(() => handleClick(), 15000);
+  const timeoutId = setTimeout(() => {
+    if (sunElement) {
+      handleClick();
+    }
+  }, 15000);
+
+  window.addEventListener("beforeunload", function () {
+    clearTimeout(timeoutId);
+  });
 
   return (
     <div className="fade-in">
@@ -43,7 +42,8 @@ export default function Sunglasses() {
       <button
         ref={buttonRef}
         style={{
-          background: "white",
+          background: "#222222",
+          color: "#f4f4f4",
           width: "150px",
           height: "auto",
           border: "unset",
@@ -51,7 +51,7 @@ export default function Sunglasses() {
           fontFamily: "GT-Flexa",
           fontSize: "2rem",
           bottom: "0",
-          right: "0",
+          left: "0",
           zIndex: "3",
           padding: "0.5rem",
           margin: "1rem",
@@ -77,7 +77,7 @@ export default function Sunglasses() {
               <a
                 href="https://stormy-uttermost-cheetah.glitch.me/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="link"
               >
                 OPEN IN NEW WINDOW<span className="bullet"> &bull;</span>
@@ -107,10 +107,7 @@ export default function Sunglasses() {
       </div>
       <div className="single-img-txt">
         <video autoPlay muted loop>
-          <source
-            src="./media/sun/sun.webm"
-            type="video/mp4"
-          />
+          <source src="./media/sun/sun.webm" type="video/mp4" />
           This browser doesn't support video tag.
         </video>
         <div className="image-desc">

@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectInfo from "./ProjectInfo";
-import Dot from "./Dot";
 import Flower from "./Flower";
-import Psych from "./Psych";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -19,6 +17,39 @@ export default function Nav() {
     const letters = document.getElementsByClassName("letter");
 
     const fontFamilies = ["GT-Flexa", "Fraunces-It"];
+
+    for (var i = 0; i < letters.length; i++) {
+      if (letters[i].id !== "dot" && letters[i].id !== "about") {
+        letters[i].addEventListener("mouseenter", (e) => {
+          e.target.style.opacity = "1";
+
+          for (var i = 0; i < letters.length; i++) {
+            if (letters[i] !== e.target && letters[i].id !== "dot" && letters[i].id !== "about") {
+              letters[i].style.opacity = "0.05";
+            }
+          }
+
+          if (
+            e.target &&
+            e.target.previousElementSibling &&
+            e.target.parentNode &&
+            e.target.previousElementSibling === e.target.parentNode.firstChild
+          ) {
+          } else {
+            e.target.previousElementSibling.style.opacity = "0.05";
+          }
+          e.target.nextElementSibling.style.opacity = "0.05";
+        });
+        letters[i].addEventListener("mouseleave", (e) => {
+          for (var i = 0; i < letters.length; i++) {
+            letters[i].style.opacity = "1";
+          }
+          e.target.style.opacity = "1";
+          e.target.previousElementSibling.style.opacity = "1";
+          e.target.nextElementSibling.style.opacity = "1";
+        });
+      }
+    }
 
     function selectFont(fontFamilyIndex) {
       applyFont(fontFamilyIndex);
@@ -49,10 +80,6 @@ export default function Nav() {
     }
 
     function changeNameNavElementFlexa() {
-      const defaultFontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
-      const fontVariationSettingsTwo = `"wght" 600, "wdth" 25, "ital" 0`;
-      const adjacentSettings = `"wght" 450, "wdth" 25, "ital" 0`;
-
       document.getElementById("categories").style.fontFamily = "GT-Flexa";
       document.getElementById(
         "categories"
@@ -63,40 +90,8 @@ export default function Nav() {
       document.getElementById(
         "categories"
       ).nextElementSibling.style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
-
-      for (var i = 0; i < letters.length; i++) {
-        if (letters[i].id !== "dot" && letters[i].id !== "about") {
-          letters[i].addEventListener("mouseenter", (e) => {
-            e.target.style.fontVariationSettings = fontVariationSettingsTwo;
-
-            if (
-              e.target &&
-              e.target.previousElementSibling &&
-              e.target.parentNode &&
-              e.target.previousElementSibling === e.target.parentNode.firstChild
-            ) {
-            } else {
-              e.target.previousElementSibling.style.fontVariationSettings =
-                adjacentSettings;
-            }
-            e.target.nextElementSibling.style.fontVariationSettings =
-              adjacentSettings;
-          });
-          letters[i].addEventListener("mouseleave", (e) => {
-            e.target.style.fontVariationSettings = defaultFontVariationSettings;
-            e.target.previousElementSibling.style.fontVariationSettings =
-              defaultFontVariationSettings;
-            e.target.nextElementSibling.style.fontVariationSettings =
-              defaultFontVariationSettings;
-          });
-        }
-      }
     }
     function changeNameNavElementFrauncesIt() {
-      const defaultFontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
-      const fontVariationSettingsTwo = `"opsz" 1, "wght" 900, "SOFT" 100, "WONK" 1`;
-      const adjacentSettings = `"opsz" 144, "wght" 750, "SOFT" 100, "WONK" 1`;
-
       document.getElementById("categories").style.fontFamily = "Fraunces-It";
       document.getElementById(
         "categories"
@@ -107,41 +102,20 @@ export default function Nav() {
       document.getElementById(
         "categories"
       ).nextElementSibling.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
-
-      for (var i = 0; i < letters.length; i++) {
-        if (letters[i].id !== "dot" && letters[i].id !== "about") {
-          letters[i].addEventListener("mouseenter", (e) => {
-            e.target.style.fontVariationSettings = fontVariationSettingsTwo;
-            if (
-              e.target &&
-              e.target.previousElementSibling &&
-              e.target.parentNode &&
-              e.target.previousElementSibling === e.target.parentNode.firstChild
-            ) {
-            } else {
-              e.target.previousElementSibling.style.fontVariationSettings =
-                adjacentSettings;
-            }
-            e.target.nextElementSibling.style.fontVariationSettings =
-              adjacentSettings;
-          });
-          letters[i].addEventListener("mouseleave", (e) => {
-            e.target.style.fontVariationSettings = defaultFontVariationSettings;
-            e.target.previousElementSibling.style.fontVariationSettings =
-              defaultFontVariationSettings;
-            e.target.nextElementSibling.style.fontVariationSettings =
-              defaultFontVariationSettings;
-          });
-        }
-      }
     }
 
     function disableGrad() {
-      document.getElementById("defaultCanvas0").style.display = "none";
+      document.getElementById("static-bar").style.backgroundColor = "#f4f4f4";
+      document.getElementById("defaultCanvas0").style.opacity = "0";
+      document.getElementById("defaultCanvas0").style.transition = "none";
     }
 
     function enableGrad() {
-      document.getElementById("defaultCanvas0").style.display = "block";
+      document.getElementById("static-bar").style.backgroundColor =
+        "transparent";
+      document.getElementById("defaultCanvas0").style.opacity = "100";
+      document.getElementById("defaultCanvas0").style.transition =
+        "opacity 0.5s ease-in 2s";
     }
 
     click_ref.current = handleDotClick;
@@ -312,7 +286,6 @@ export default function Nav() {
   return (
     <>
       <div id="static-bar">
-        <Psych />
         <div id="nav">
           <span
             className="letter"
@@ -321,7 +294,7 @@ export default function Nav() {
             onMouseLeave={handleAboutStopHover}
             onClick={() => navigate("")}
           >
-            <div>ABOUT</div>
+            <div>HOME</div>
           </span>
           <span
             className="letter"
@@ -368,8 +341,8 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Sk8"
-            data-category="3d"
+            data-project="Play"
+            data-category="frontend"
           >
             t
           </span>
@@ -378,7 +351,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Rest 2066"
+            data-project="Sk8"
             data-category="3d"
           >
             a
@@ -388,7 +361,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Something"
+            data-project="Rest 2066"
             data-category="3d"
           >
             i
@@ -477,7 +450,7 @@ export default function Nav() {
             <span id="frontend">Frontend</span>
             <span id="threed">3D</span>
             <span id="retouch">Retouch</span>
-            <span id="photo">Photo</span>
+            <span id="photo">Photography</span>
           </div>
           <ProjectInfo
             isHover={isHover}

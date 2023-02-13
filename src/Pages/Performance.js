@@ -18,7 +18,7 @@ export default function Performance() {
               <a
                 href="https://alastairfarman.github.io/performance-physique/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="link"
               >
                 <span className="bullet">&bull; </span>OPEN IN NEW WINDOW
@@ -46,7 +46,7 @@ export default function Performance() {
           </p>
         </div>
       </div>
-      <div className="single-img-txt">
+      <div className="single-img-txt img-R">
         <div className="image-desc">
           <p>
             React Hooks allowed for a smoother, more fluid user experience while

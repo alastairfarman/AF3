@@ -35,7 +35,7 @@ export default function ProjectInfo(props) {
   if (props.isHover === true) {
     return (
       <>
-        <div className="project-info" ref={projectDiv}>
+        <div className="project-info" ref={projectDiv} style={{textTransform: "uppercase", backgroundColor: "#f4f4f4"}}>
           {props.project}
         </div>
       </>

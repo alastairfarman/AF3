@@ -3,17 +3,15 @@ import React from "react";
 
 export default function Psych() {
   let t = 0;
-  let rectWidth;
 
   const resizeCanvas = (p5) => {
     p5.resizeCanvas(p5.windowWidth, 150 + p5.windowWidth / 20);
-    rectWidth = p5.width / 100;
   };
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, 500).parent(canvasParentRef);
     p5.colorMode(p5.HSB, 360, 100, 100);
     p5.noStroke();
-    p5.frameRate(60);
+    p5.frameRate(15);
     resizeCanvas(p5);
     p5.windowResized = () => resizeCanvas(p5);
   };

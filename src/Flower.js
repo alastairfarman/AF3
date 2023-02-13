@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Flower() {
   const numPetals = 5;
-  const petalRadius = 60;
+  const petalRadius = 75;
   const petalSpacing = (2 * Math.PI) / numPetals;
   const flowerCenterX = 250;
   const flowerCenterY = 250;
@@ -22,6 +22,7 @@ export default function Flower() {
           paintOrder: "fill",
           fill: "#222222",
           fillRule: "nonzero",
+          transform: "scale(0.3)"
         }}
         cx={cx}
         cy={cy}
@@ -33,9 +34,9 @@ export default function Flower() {
 
   return (
     <svg
-      viewBox="30.83 -3.792 448.501 505.637"
-      width={505}
-      height={505}
+      viewBox="0 0 500 500"
+      width={500}
+      height={500}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
@@ -63,8 +64,8 @@ export default function Flower() {
         }}
         cx={flowerCenterX}
         cy={flowerCenterY}
-        rx="200"
-        ry="200"
+        rx="250"
+        ry="250"
       />
 
       {petals}
@@ -87,6 +88,7 @@ export default function Flower() {
 
       <path
         d="M 405 250 A 155 155 0 0 1 250 405 A 155 155 0 0 1 95 250 A 155 155 0 0 1 250 95 A 155 155 0 0 1 405 250 Z"
+        
         style={{
           stroke: "rgb(0, 0, 0)",
           paintOrder: "fill",
@@ -113,17 +115,7 @@ export default function Flower() {
           CLICK ME
         </textPath>
       </text>
-      <path
-        d="M 405 250 C 405 335.604 335.604 405 250 405 C 164.396 405 95 335.604 95 250 C 95 164.396 164.396 95 250 95 C 335.604 95 405 164.396 405 250 Z"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          paintOrder: "fill",
-          fillRule: "nonzero",
-          fill: "none",
-          strokeWidth: "0px",
-        }}
-        id="path-2"
-      />
+
       <text
         id="CLICKME2"
         style={{
@@ -135,7 +127,7 @@ export default function Flower() {
         x="64.862"
         y="14.284"
       >
-        <textPath startOffset={500} xlinkHref="#path-2">
+        <textPath startOffset={500} xlinkHref="#path-1">
           CLICK ME
         </textPath>
       </text>
