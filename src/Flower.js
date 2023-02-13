@@ -1,6 +1,35 @@
 import React from "react";
 
-export default function Dot() {
+export default function Flower() {
+  const numPetals = 5;
+  const petalRadius = 60;
+  const petalSpacing = (2 * Math.PI) / numPetals;
+  const flowerCenterX = 250;
+  const flowerCenterY = 250;
+
+  const petals = [];
+  for (let i = 0; i < numPetals; i++) {
+    const angle = i * petalSpacing;
+    const cx = flowerCenterX + Math.sin(angle) * 120;
+    const cy = flowerCenterY + Math.cos(angle) * 120;
+    petals.push(
+      <ellipse
+        key={i}
+        className="petal"
+        style={{
+          stroke: "rgb(0, 0, 0)",
+          strokeWidth: "0px",
+          paintOrder: "fill",
+          fill: "#222222",
+          fillRule: "nonzero",
+        }}
+        cx={cx}
+        cy={cy}
+        rx={petalRadius}
+        ry={petalRadius}
+      />
+    );
+  }
 
   return (
     <svg
@@ -26,120 +55,35 @@ export default function Dot() {
       </defs>
 
       <ellipse
-      className="big-circle"
+        className="big-circle"
         style={{
           paintOrder: "stroke",
           fill: "#f4f4f4",
           fillRule: "nonzero",
         }}
-        cx={250}
-        cy={250}
+        cx={flowerCenterX}
+        cy={flowerCenterY}
         rx="200"
         ry="200"
       />
 
-      <ellipse
-        className="petal"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          strokeWidth: "0px",
-          paintOrder: "fill",
-          fill: "#222222",
-          fillRule: "nonzero",
-        }}
-        cx={200}
-        cy={165}
-        rx="60"
-        ry="60"
-      />
-      <ellipse
-        className="petal"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          strokeWidth: "0px",
-          paintOrder: "fill",
-          fill: "#222222",
-          fillRule: "nonzero",
-        }}
-        cx={300}
-        cy={165}
-        rx="60"
-        ry="60"
-      />
-      <ellipse
-        className="petal"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          strokeWidth: "0px",
-          paintOrder: "fill",
-          fill: "#222222",
-          fillRule: "nonzero",
-        }}
-        cx={350}
-        cy={250}
-        rx="60"
-        ry="60"
-      />
+      {petals}
 
       <ellipse
-        className="petal"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          strokeWidth: "0px",
-          paintOrder: "fill",
-          fill: "#222222",
-          fillRule: "nonzero",
-        }}
-        cx={150}
-        cy={250}
-        rx="60"
-        ry="60"
-      />
-
-      <ellipse
-        className="petal"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          strokeWidth: "0px",
-          paintOrder: "fill",
-          fill: "#222222",
-          fillRule: "nonzero",
-        }}
-        cx={200}
-        cy={335}
-        rx="60"
-        ry="60"
-      />
-      <ellipse
-        className="petal"
-        style={{
-          stroke: "rgb(0, 0, 0)",
-          strokeWidth: "0px",
-          paintOrder: "fill",
-          fill: "#222222",
-          fillRule: "nonzero",
-        }}
-        cx={300}
-        cy={335}
-        rx="60"
-        ry="60"
-      />
-
-<ellipse
-      className="big-circle"
+        className="big-circle"
+        id="big-circle"
         style={{
           stroke: "rgb(244,244,244)",
           strokeWidth: "50px",
           paintOrder: "stroke",
-          fill: "#222222",
+          fill: "#f4f4f4",
           fillRule: "nonzero",
         }}
-        cx={250}
-        cy={250}
-        rx="50"
-        ry="50"
+        cx={flowerCenterX}
+        cy={flowerCenterY}
+        rx="65"
+        ry="65"
       />
-
 
       <path
         d="M 405 250 A 155 155 0 0 1 250 405 A 155 155 0 0 1 95 250 A 155 155 0 0 1 250 95 A 155 155 0 0 1 405 250 Z"
@@ -152,6 +96,7 @@ export default function Dot() {
         }}
         id="path-1"
       />
+
       <text
         id="CLICKME1"
         style={{

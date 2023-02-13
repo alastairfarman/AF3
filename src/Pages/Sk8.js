@@ -1,3 +1,4 @@
+import React from "react";
 export default function Sk8() {
   return (
     <>
@@ -7,20 +8,16 @@ export default function Sk8() {
           <div className="header">
             <div className="title">
               <h1>Sk8</h1>
-              {/* <div className="tech">
-                <img src="./tech-icons/blender.png" alt="Blender logo"></img>
-              </div> */}
             </div>
             <p>
               Sk8 is a personal project to further explore modelling techniques,
               materials and animation in Blender, as well as render options and
               video output with alpha channels for web implementation.
             </p>
-            <div className="scroll"> SCROLL</div>
           </div>
         </div>
         <div id="kickflip">
-          <video autoPlay muted loop>
+          <video autoPlay muted loop playsinline webkit-playsinline>
             <source src="./media/sk8/kickflip.webm" type="video/mp4" />
             This browser doesn't support video tag.
           </video>

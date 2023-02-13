@@ -1,3 +1,4 @@
+import React from "react";
 export default function Photo2() {
   return (
     <>
@@ -6,9 +7,11 @@ export default function Photo2() {
       <div className="single-img">
         <img src="./media/BB/1.jpg" alt="" />
       </div>
-      <div className="single-img">
+      <div className="double-img">
         <img src="./media/BB/3.jpg" alt="" />
         <img src="./media/BB/4.jpg" alt="" />
+      </div>
+      <div className="double-img">
         <img src="./media/BB/5.jpg" alt="" />
         <img src="./media/BB/6.jpg" alt="" />
       </div>

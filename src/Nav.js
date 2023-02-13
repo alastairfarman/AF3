@@ -1,7 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectInfo from "./ProjectInfo";
 import Dot from "./Dot";
+import Flower from "./Flower";
+import Psych from "./Psych";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -47,10 +49,20 @@ export default function Nav() {
     }
 
     function changeNameNavElementFlexa() {
-      document.getElementById("nav").style.textTransform = "capitalize";
       const defaultFontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
-      const fontVariationSettingsTwo = `"wght" 800, "wdth" 50, "ital" 0`;
-      const adjacentSettings = `"wght" 600, "wdth" 30, "ital" 0`;
+      const fontVariationSettingsTwo = `"wght" 600, "wdth" 25, "ital" 0`;
+      const adjacentSettings = `"wght" 450, "wdth" 25, "ital" 0`;
+
+      document.getElementById("categories").style.fontFamily = "GT-Flexa";
+      document.getElementById(
+        "categories"
+      ).style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
+      document.getElementById(
+        "categories"
+      ).nextElementSibling.style.fontFamily = "GT-Flexa";
+      document.getElementById(
+        "categories"
+      ).nextElementSibling.style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
 
       for (var i = 0; i < letters.length; i++) {
         if (letters[i].id !== "dot" && letters[i].id !== "about") {
@@ -81,11 +93,20 @@ export default function Nav() {
       }
     }
     function changeNameNavElementFrauncesIt() {
-      document.getElementById("nav").style.textTransform = "capitalize";
-
       const defaultFontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
-      const fontVariationSettingsTwo = `"opsz" 9, "wght" 900, "SOFT" 100, "WONK" 1`;
+      const fontVariationSettingsTwo = `"opsz" 1, "wght" 900, "SOFT" 100, "WONK" 1`;
       const adjacentSettings = `"opsz" 144, "wght" 750, "SOFT" 100, "WONK" 1`;
+
+      document.getElementById("categories").style.fontFamily = "Fraunces-It";
+      document.getElementById(
+        "categories"
+      ).style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
+      document.getElementById(
+        "categories"
+      ).nextElementSibling.style.fontFamily = "Fraunces-It";
+      document.getElementById(
+        "categories"
+      ).nextElementSibling.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
 
       for (var i = 0; i < letters.length; i++) {
         if (letters[i].id !== "dot" && letters[i].id !== "about") {
@@ -115,8 +136,18 @@ export default function Nav() {
       }
     }
 
+    function disableGrad() {
+      document.getElementById("defaultCanvas0").style.display = "none";
+    }
+
+    function enableGrad() {
+      document.getElementById("defaultCanvas0").style.display = "block";
+    }
+
     click_ref.current = handleDotClick;
     function handleDotClick() {
+      fontFamilyIndex === 1 ? disableGrad() : enableGrad();
+
       fontFamilyIndex === 1 ? (fontFamilyIndex = 0) : fontFamilyIndex++;
 
       const timer = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -128,9 +159,11 @@ export default function Nav() {
         let text2 = document.getElementById("CLICKME2");
 
         if (petals[0].style.transform === "scale(1)") {
+          text.style.display = "block";
           text.style.fontFamily = "GT-Flexa";
           text.style.fontSize = "124px";
           text.style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
+          text2.style.display = "block";
           text2.style.fontFamily = "GT-Flexa";
           text2.style.fontSize = "124px";
           text2.style.fontVariationSettings = `"wght" 400, "wdth" 25, "ital" 0`;
@@ -140,9 +173,12 @@ export default function Nav() {
             await timer(150);
           }
         } else {
+          text.style.display = "none";
+
           text.style.fontFamily = "Fraunces-IT";
           text.style.fontSize = "90px";
           text.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
+          text2.style.display = "none";
           text2.style.fontFamily = "Fraunces-IT";
           text2.style.fontSize = "90px";
           text2.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
@@ -161,11 +197,9 @@ export default function Nav() {
           if (letters[i].id !== "dot") {
             letters[i].style.transform = "translate(0, -500px)";
             letters[i].style.pointerEvents = "none";
-console.log(letters[i].style.pointerEvents)
             slideBackLetter(letters[i]);
           }
           await timer(50);
-
         }
       }
 
@@ -178,7 +212,7 @@ console.log(letters[i].style.pointerEvents)
 
           setTimeout(() => {
             letter.style.pointerEvents = "auto";
-          },2000)
+          }, 2000);
         }, 1500);
       }
     }
@@ -190,10 +224,8 @@ console.log(letters[i].style.pointerEvents)
     const threedCat = document.getElementById("threed");
     const retouchCat = document.getElementById("retouch");
     const photoCat = document.getElementById("photo");
-    const staticBar = document.getElementById("static-bar");
     categories.style.height = "2rem";
     categories.style.opacity = "100%";
-    staticBar.style.backgroundColor = "rgba(244,244,244,1)";
 
     switch (category) {
       case "frontend":
@@ -233,11 +265,9 @@ console.log(letters[i].style.pointerEvents)
     const staticBar = document.getElementById("static-bar");
     categories.style.height = "0rem";
     categories.style.opacity = "0%";
-    staticBar.style.backgroundColor = null;
     staticBar.style.backdropFilter = null;
 
     for (let i = 0; i < categoriesElements.length; i++) {
-      // navSections[i].classList.remove("nav-hover");
       categoriesElements[i].classList.remove("cat-hover");
     }
   }
@@ -258,8 +288,22 @@ console.log(letters[i].style.pointerEvents)
     navigate(pathname);
   }
 
-  function handleDotHover() {}
-  function handleDotStopHover() {}
+  function handleDotHover() {
+    document
+      .getElementById("big-circle")
+      .setAttribute(
+        "style",
+        "fill: #222222; stroke: #f4f4f4;  stroke-width: 50px; paint-order: stroke; fill-rule: nonzero;"
+      );
+  }
+  function handleDotStopHover() {
+    document
+      .getElementById("big-circle")
+      .setAttribute(
+        "style",
+        "fill: #f4f4f4; stroke: #f4f4f4; stroke-width: 50px; paint-order: stroke; fill-rule: nonzero;"
+      );
+  }
 
   function handleAboutHover(e) {}
 
@@ -268,6 +312,7 @@ console.log(letters[i].style.pointerEvents)
   return (
     <>
       <div id="static-bar">
+        <Psych />
         <div id="nav">
           <span
             className="letter"
@@ -276,9 +321,7 @@ console.log(letters[i].style.pointerEvents)
             onMouseLeave={handleAboutStopHover}
             onClick={() => navigate("")}
           >
-            <div>HOME</div>
             <div>ABOUT</div>
-            <div>CONTACT</div>
           </span>
           <span
             className="letter"
@@ -428,7 +471,7 @@ console.log(letters[i].style.pointerEvents)
             onMouseEnter={handleDotHover}
             onMouseLeave={handleDotStopHover}
           >
-            <Dot />
+            <Flower />
           </span>
           <div id="categories">
             <span id="frontend">Frontend</span>

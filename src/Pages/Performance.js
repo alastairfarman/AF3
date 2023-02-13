@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Performance() {
   return (
     <div className="fade-in">
@@ -53,7 +55,7 @@ export default function Performance() {
         </div>
         <img src="./media/pp-02.png" alt=""></img>
       </div>
-      <div className="single-img">
+      <div className="single-img-txt">
         <video autoPlay muted loop width={"400px"}>
           <source src="./media/pp-p5.webm" type="video/mp4" />
           This browser doesn't support video tag.
