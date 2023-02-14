@@ -24,7 +24,11 @@ export default function Nav() {
           e.target.style.opacity = "1";
 
           for (var i = 0; i < letters.length; i++) {
-            if (letters[i] !== e.target && letters[i].id !== "dot" && letters[i].id !== "about") {
+            if (
+              letters[i] !== e.target &&
+              letters[i].id !== "dot" &&
+              letters[i].id !== "about"
+            ) {
               letters[i].style.opacity = "0.05";
             }
           }
@@ -105,24 +109,47 @@ export default function Nav() {
     }
 
     function disableGrad() {
-      document.getElementById("static-bar").style.backgroundColor = "#f4f4f4";
-      document.getElementById("defaultCanvas0").style.opacity = "0";
+      document.getElementById("static-bar").style.backgroundColor =
+        "rgba(244,244,244,1.0)";
       document.getElementById("defaultCanvas0").style.transition = "none";
     }
 
     function enableGrad() {
       document.getElementById("static-bar").style.backgroundColor =
-        "transparent";
-      document.getElementById("defaultCanvas0").style.opacity = "100";
+        "rgba(244,244,244,0.0)";
       document.getElementById("defaultCanvas0").style.transition =
         "opacity 0.5s ease-in 2s";
     }
 
     click_ref.current = handleDotClick;
     function handleDotClick() {
-      fontFamilyIndex === 1 ? disableGrad() : enableGrad();
+      function fnc() {
+        disableGrad();
+        document.body.style.fontFamily = "GT-Flexa";
+        document.body.style.fontVariationSettings = `"wght" 300, "wdth" 55, "ital" 0`;
+        document.body.style.fontSize = "1rem";
+        var h1 = document.getElementsByTagName("h1");
+        for (i = 0; i < h1.length; i++) {
+          h1[i].classList.remove("bold");
+        }
+        fontFamilyIndex = 0;
+      }
 
-      fontFamilyIndex === 1 ? (fontFamilyIndex = 0) : fontFamilyIndex++;
+      function fnc2() {
+        enableGrad();
+        document.body.style.fontFamily = "Fraunces-It";
+        document.body.style.fontSize = "0.9rem";
+        var h1 = document.getElementsByTagName("h1");
+
+        for (i = 0; i < h1.length; i++) {
+          h1[i].className += "bold";
+        }
+
+        document.body.style.fontVariationSettings = `"opsz" 20, "wght" 350, "SOFT" 100, "WONK" 1`;
+        fontFamilyIndex++;
+      }
+
+      fontFamilyIndex === 1 ? fnc() : fnc2();
 
       const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -149,13 +176,7 @@ export default function Nav() {
         } else {
           text.style.display = "none";
 
-          text.style.fontFamily = "Fraunces-IT";
-          text.style.fontSize = "90px";
-          text.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
           text2.style.display = "none";
-          text2.style.fontFamily = "Fraunces-IT";
-          text2.style.fontSize = "90px";
-          text2.style.fontVariationSettings = `"opsz" 144, "wght" 700, "SOFT" 100, "WONK" 1`;
 
           for (let i = 0; i < petals.length; i++) {
             petals[i].style.transform = "scale(1)";
@@ -236,10 +257,8 @@ export default function Nav() {
   function categoryHoverFalse() {
     const categories = document.getElementById("categories");
     const categoriesElements = document.getElementById("categories").children;
-    const staticBar = document.getElementById("static-bar");
     categories.style.height = "0rem";
     categories.style.opacity = "0%";
-    staticBar.style.backdropFilter = null;
 
     for (let i = 0; i < categoriesElements.length; i++) {
       categoriesElements[i].classList.remove("cat-hover");
@@ -376,7 +395,13 @@ export default function Nav() {
           >
             r
           </span>
-          <span> </span>
+          <span
+            className="letter"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleStopHover}
+          >
+            {" "}
+          </span>
           <span
             className="letter"
             onMouseEnter={handleHover}

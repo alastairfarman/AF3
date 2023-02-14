@@ -23,7 +23,7 @@ export default function Photo3() {
       </div>
       <div className="single-img">
         <video autoPlay muted loop playsInline webkit-playsinline="true">
-          <source src="./media/1-3.mp4" type="video/mp4" />
+          <source src="./media/1-4.mp4" type="video/mp4" />
           This browser doesn't support video tag.
         </video>
       </div>

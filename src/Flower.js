@@ -20,7 +20,7 @@ export default function Flower() {
           stroke: "rgb(0, 0, 0)",
           strokeWidth: "0px",
           paintOrder: "fill",
-          fill: "#222222",
+          fill: "#f4f4f4",
           fillRule: "nonzero",
           transform: "scale(0.3)"
         }}
@@ -59,7 +59,7 @@ export default function Flower() {
         className="big-circle"
         style={{
           paintOrder: "stroke",
-          fill: "#f4f4f4",
+          fill: "#222222",
           fillRule: "nonzero",
         }}
         cx={flowerCenterX}
@@ -74,7 +74,7 @@ export default function Flower() {
         className="big-circle"
         id="big-circle"
         style={{
-          stroke: "rgb(244,244,244)",
+          stroke: "#f4f4f4",
           strokeWidth: "50px",
           paintOrder: "stroke",
           fill: "#f4f4f4",
@@ -102,7 +102,7 @@ export default function Flower() {
       <text
         id="CLICKME1"
         style={{
-          fill: "#222222",
+          fill: "#f4f4f4",
           fontFamily: '"GT-Flexa"',
           fontSize: "124px",
           whiteSpace: "prex",
@@ -119,7 +119,7 @@ export default function Flower() {
       <text
         id="CLICKME2"
         style={{
-          fill: "#222222",
+          fill: "#f4f4f4",
           fontFamily: '"GT-Flexa"',
           fontSize: "124px",
           whiteSpace: "pre",

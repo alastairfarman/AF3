@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Performance() {
   return (
-    <div className="fade-in">
+    <>
       <div className="nav-spacer"></div>
       <div className="header-container">
         <div className="header">
@@ -71,6 +71,6 @@ export default function Performance() {
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 }

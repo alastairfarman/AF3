@@ -26,7 +26,7 @@ export default function Sunglasses() {
   });
 
   return (
-    <div className="fade-in">
+    <>
       <iframe
         id="sunglasses-iframe"
         src="https://stormy-uttermost-cheetah.glitch.me/"
@@ -114,10 +114,10 @@ export default function Sunglasses() {
           <p>
             A 360 view was created by rendering individual frames from a
             rotation animation then controlled by user slider input. This was
-            built alongside a functional shopping cart
+            built alongside a functional shopping cart.
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -10,9 +10,14 @@ export default function ProjectInfo(props) {
       displayArea(props.category);
       projectDiv.current.style.height = "3rem";
       projectDiv.current.style.opacity = "100%";
+      projectDiv.current.style.backgroundColor = "rgba(244,244,244,1)";
+      projectDiv.current.style.transition =
+        "height 1s, opacity 1s ease-in-out, background-color 0.3s ease-in-out 0.6s";
     } else {
       projectDiv.current.style.height = "0rem";
       projectDiv.current.style.opacity = "0%";
+      projectDiv.current.style.transition = "height 1s, opacity 1s ease-in-out";
+      console.log(projectDiv.current.style.transition);
     }
   }
 
@@ -35,7 +40,14 @@ export default function ProjectInfo(props) {
   if (props.isHover === true) {
     return (
       <>
-        <div className="project-info" ref={projectDiv} style={{textTransform: "uppercase", backgroundColor: "#f4f4f4"}}>
+        <div
+          className="project-info"
+          ref={projectDiv}
+          style={{
+            textTransform: "uppercase",
+            backgroundColor: "rgba(244,244,244,0)",
+          }}
+        >
           {props.project}
         </div>
       </>

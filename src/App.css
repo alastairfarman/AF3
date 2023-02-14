@@ -8,11 +8,9 @@ body {
   color: #222222;
 }
 
-
 h1 {
   all: unset;
   font-size: 3rem;
-  font-variation-settings: "wght" 400, "wdth" 25, "ital" 0;
   text-transform: uppercase;
 }
 
@@ -46,7 +44,7 @@ p {
   background-color: #f4f4f4;
   justify-content: center;
   background-size: cover;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #nav {
@@ -93,8 +91,6 @@ p {
   user-select: none;
 }
 
-
-
 #dot {
   position: fixed;
   bottom: 0;
@@ -110,14 +106,12 @@ p {
 }
 
 #about {
-  font-size: 2rem;
+  font-size: 24px;
   line-height: 1.5rem;
   grid-column-start: 1;
   display: flex;
   flex-direction: column;
 }
-
-
 
 .small-img {
   position: relative;
@@ -141,7 +135,8 @@ p {
 
 #CLICKME1,
 #CLICKME2 {
-  animation: rotate360 20s linear infinite, fade-in 1s cubic-bezier(0.11, 0, 0.5, 0);
+  animation: rotate360 20s linear infinite,
+    fade-in 1s cubic-bezier(0.11, 0, 0.5, 0);
   transform-origin: 250px 250px;
 }
 
@@ -210,12 +205,13 @@ p {
 
 .header-container {
   height: auto;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f4f4f4;
+  z-index: 3;
 }
 
 .project-info {
@@ -231,9 +227,12 @@ p {
   white-space: nowrap;
   overflow: hidden;
   text-transform: capitalize;
-  transition: height 1s, opacity 1.5s ease-in-out;
+  transition: height 1s, opacity 1s ease-in-out;
   z-index: -5;
 }
+
+
+
 
 .add-info {
   display: flex;
@@ -370,8 +369,6 @@ p {
   color: #222222;
 }
 
-
-
 a:visited {
   color: #999999;
 }
@@ -442,12 +439,9 @@ a:visited {
 
 #defaultCanvas0 {
   position: fixed;
-  opacity: 0;
   top: 0;
   left: 0;
-  
 }
-
 
 .react-p5 {
   position: fixed;
@@ -459,16 +453,34 @@ a:visited {
   filter: contrast(1) brightness(1.5);
 }
 
-.pens{
+.pens {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
   max-width: 1000px;
   margin: 1rem;
 }
 
-.pens * {margin: 2rem;}
-
+.bold {
+  font-variation-settings: "wght" 700;
+  font-size: 2rem;
+}
 
 @media only screen and (max-width: 900px) {
+  .header h1 {
+    width: 100%;
+    font-size: 2rem;
+  }
+  .header {
+    width: 100%;
+    font-weight: 800;
+  }
+
+  .add-info {
+    width: 100%;
+    font-size: 0.8rem;
+  }
   .double-img {
     flex-direction: column;
   }
@@ -489,9 +501,19 @@ a:visited {
     max-width: 100%;
   }
 
-  .img-R :last-child{
+  .img-R :last-child {
     display: flex;
-    grid-row-start: 1; }
+    grid-row-start: 1;
+  }
+
+  .letter {
+    font-size: 1.8rem;
+  }
+
+  #about {
+    padding: 0;
+    font-size: 14px;
+  }
 }
 
 @media (hover: hover) {
@@ -506,8 +528,7 @@ a:visited {
   button:hover {
     cursor: url(./cursors/cursor-hover.png) 15 15, auto;
   }
-  
-  
+
   #about:hover * {
     /* font-variation-settings: "wght" 800, "wdth" 25, "ital" 0; */
   }
