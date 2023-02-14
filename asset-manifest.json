@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.697aedbc.css",
-    "main.js": "./static/js/main.abe4a6a0.js",
+    "main.css": "./static/css/main.15c511b7.css",
+    "main.js": "./static/js/main.79e2e507.js",
     "static/media/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2": "./static/media/Fraunces-Italic[SOFT,WONK,opsz,wght].04692b969a0ccfbc21b5.woff2",
     "static/media/GT-Flexa-Trial-VF.woff2": "./static/media/GT-Flexa-Trial-VF.7b4115588e5870b4d532.woff2",
     "static/media/kickflip-bg-layers.svg": "./static/media/kickflip-bg-layers.161804e0e2d6250a9723.svg",
     "index.html": "./index.html",
-    "main.697aedbc.css.map": "./static/css/main.697aedbc.css.map",
-    "main.abe4a6a0.js.map": "./static/js/main.abe4a6a0.js.map"
+    "main.15c511b7.css.map": "./static/css/main.15c511b7.css.map",
+    "main.79e2e507.js.map": "./static/js/main.79e2e507.js.map"
   },
   "entrypoints": [
-    "static/css/main.697aedbc.css",
-    "static/js/main.abe4a6a0.js"
+    "static/css/main.15c511b7.css",
+    "static/js/main.79e2e507.js"
   ]
 }
