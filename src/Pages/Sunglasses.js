@@ -1,22 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 export default function Sunglasses() {
   const buttonRef = useRef();
-  const sunElement = document.getElementById("sunglasses-iframe");
+  const sunElement = useRef();
+
+  useEffect(() => {
+    document.getElementById("root").style.backgroundColor = "#f4f4f4";
+  }, []);
 
   function handleClick() {
-    if (sunElement.classList.contains("to-front")) {
-      console.log(sunElement);
-      sunElement.classList.remove("to-front");
+    if (sunElement.current.classList.contains("to-front")) {
+      sunElement.current.classList.remove("to-front");
       buttonRef.current.innerText = "SHOW";
     } else {
-      sunElement.classList.add("to-front");
+      sunElement.current.classList.add("to-front");
       buttonRef.current.innerText = "HIDE";
     }
   }
 
   const timeoutId = setTimeout(() => {
-    if (sunElement) {
+    if (sunElement.current) {
       handleClick();
     }
   }, 15000);
@@ -29,6 +32,7 @@ export default function Sunglasses() {
     <>
       <iframe
         id="sunglasses-iframe"
+        ref={sunElement}
         src="https://stormy-uttermost-cheetah.glitch.me/"
         title="Sunglasses"
         allowtransparency="true"
@@ -66,11 +70,6 @@ export default function Sunglasses() {
         <div className="header">
           <div className="title">
             <h1>Sunglasses Product Visualisation</h1>
-            {/* <div className="tech">
-              <img src="./tech-icons/blender.png" alt="Blender logo"></img>
-              <img src="./tech-icons/threejs.svg" alt="three.js logo"></img>
-              <img src="./tech-icons/needle.png" alt="Needle logo"></img>
-            </div> */}
           </div>
           <div className="add-info">
             <div>
@@ -114,7 +113,9 @@ export default function Sunglasses() {
           <p>
             A 360 view was created by rendering individual frames from a
             rotation animation then controlled by user slider input. This was
-            built alongside a functional shopping cart.
+            built alongside a functional shopping cart. The next step here would
+            be to optimise the 3d model geometry to reduce file size and improve
+            performance, then integrate that into a product page.
           </p>
         </div>
       </div>

@@ -11,6 +11,7 @@ body {
 h1 {
   all: unset;
   font-size: 3rem;
+  font-variation-settings: "wght" 400, "wdth" 25, "ital" 0;
   text-transform: uppercase;
 }
 
@@ -28,9 +29,13 @@ p {
   flex-direction: column;
   align-items: center;
   --gradient: linear-gradient(
-    90deg,
-    rgba(34, 193, 195, 1),
-    rgba(253, 187, 45, 1)
+    310deg,
+    hsl(18deg 100% 50%) 0%,
+    hsl(26deg 100% 50%) 29%,
+    hsl(32deg 100% 50%) 43%,
+    hsl(38deg 100% 50%) 57%,
+    hsl(44deg 100% 50%) 71%,
+    hsl(49deg 100% 50%) 100%
   );
   transition: background-color 1s;
 }
@@ -44,14 +49,14 @@ p {
   background-color: #f4f4f4;
   justify-content: center;
   background-size: cover;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #nav {
   width: auto;
   display: grid;
   grid-template-columns: 15% repeat(15, minmax(auto, 8%)) 15%;
-  grid-template-rows: 70px 1fr 1fr auto;
+  grid-template-rows: 66px 1fr 1fr auto;
   margin: 2rem 0rem 0rem 0rem;
   text-transform: capitalize;
   width: 100vw;
@@ -82,8 +87,7 @@ p {
 }
 
 .letter {
-  transition: font-size 1s ease-in-out, font-variation-settings 0.3s,
-    transform 0.8s, opacity 0.5s;
+  transition: font-size 1s ease-in-out, transform 0.8s, opacity 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,11 +110,30 @@ p {
 }
 
 #about {
-  font-size: 24px;
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
   line-height: 1.5rem;
   grid-column-start: 1;
   display: flex;
   flex-direction: column;
+}
+
+.square {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  /* transition: all 0.5s ease-out; */
+  z-index: 0;
+}
+.container {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .small-img {
@@ -210,7 +233,6 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f4;
 }
 
 .project-info {
@@ -444,7 +466,7 @@ a:visited {
   z-index: 2;
   top: 0;
   width: 100%;
-  height: 150px;
+  height: 140px;
   overflow: hidden;
   filter: contrast(1) brightness(1.5);
 }
@@ -470,12 +492,11 @@ a:visited {
   }
   .header {
     width: 100%;
-    font-weight: 800;
   }
 
   .add-info {
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 80%;
   }
   .double-img {
     flex-direction: column;
@@ -510,6 +531,17 @@ a:visited {
     padding: 0;
     font-size: 14px;
   }
+
+  #categories,
+  .project-info {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  #dot {
+    /* position: relative; */
+    width: 150px;
+  }
 }
 
 @media (hover: hover) {
@@ -525,9 +557,6 @@ a:visited {
     cursor: url(./cursors/cursor-hover.png) 15 15, auto;
   }
 
-  #about:hover * {
-    /* font-variation-settings: "wght" 800, "wdth" 25, "ital" 0; */
-  }
   .letter:hover {
     cursor: url(./cursors/cursor-hover.png) 15 15, auto;
     /* color: black;

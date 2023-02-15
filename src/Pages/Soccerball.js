@@ -7,11 +7,6 @@ export default function Soccerball() {
         <div className="header">
           <div className="title">
             <h1>Soccerball</h1>
-            {/* <div className="tech">
-                <img src="./tech-icons/React.svg" alt="React Logo"></img>
-                <img src="./tech-icons/threejs.svg" alt="three.js logo"></img>
-                <img src="./tech-icons/blender.png" alt="Blender logo"></img>
-              </div> */}
           </div>
           <div className="add-info">
             <div>
@@ -49,7 +44,7 @@ export default function Soccerball() {
           </p>
         </div>
       </div>
-      <div className="single-img-txt">
+      <div className="single-img-txt img-R">
         <div className="image-desc">
           <p>
             The ball is a modified BlenderKit model imported into three.js that

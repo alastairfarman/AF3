@@ -29,7 +29,7 @@ export default function Nav() {
               letters[i].id !== "dot" &&
               letters[i].id !== "about"
             ) {
-              letters[i].style.opacity = "0.05";
+              letters[i].style.opacity = "0.00";
             }
           }
 
@@ -298,9 +298,78 @@ export default function Nav() {
       );
   }
 
-  function handleAboutHover(e) {}
+  function handleAboutHover(e) {
+    const home = e.target;
+    const container = document.createElement("div");
 
-  function handleAboutStopHover(e) {}
+    const xSquares = 7;
+    const ySquares = 4;
+    const numSquares = xSquares * ySquares;
+    const displayTime = 1000; // in milliseconds
+    const intervalTime = displayTime / numSquares;
+
+    container.classList.add("container");
+    container.style.height = ySquares * 10 + "px";
+    container.style.width = xSquares * 10 + "px";
+
+    // Create an array of random indexes
+    const randomIndexes = Array.from({ length: numSquares }, (_, i) => i).sort(
+      () => Math.random() - 0.5
+    );
+
+    // Display the squares in the random order
+    randomIndexes.forEach((index, i) => {
+      const square = document.createElement("div");
+      square.classList.add("square");
+      square.style.top = (index % ySquares) * 10 + "px";
+      square.style.left = Math.floor(index / ySquares) * 10 + "px";
+      container.appendChild(square);
+
+      setTimeout(() => {
+        square.style.backgroundColor = "transparent";
+      }, i * intervalTime);
+
+      setTimeout(() => {
+        square.style.backgroundColor = randomColor();
+      }, i * intervalTime + intervalTime / 2);
+    });
+
+    home.appendChild(container);
+
+    function randomColor() {
+      const colors = ["#FF863F", "#FFA641", "#FFB740", "#FF6E40", "#FF4940"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    home.addEventListener("mouseleave", handleAboutStopHover);
+
+    function handleAboutStopHover(e) {
+      const home = e.target;
+      const container = home.lastChild;
+      const squares = container.querySelectorAll(".square");
+      const numSquares = squares.length;
+      const displayTime = 1000; // in milliseconds
+      const intervalTime = displayTime / numSquares;
+
+      // Create an array of random indexes
+      const randomIndexes = Array.from(
+        { length: numSquares },
+        (_, i) => i
+      ).sort(() => Math.random() - 0.5);
+
+      // Remove the squares in the random order
+      randomIndexes.forEach((index, i) => {
+        setTimeout(() => {
+          squares[index].style.backgroundColor = "transparent";
+        }, i * intervalTime);
+      });
+
+      // Remove the container element after all squares have been removed
+      setTimeout(() => {
+        home.removeChild(container);
+      }, numSquares * intervalTime);
+    }
+  }
 
   return (
     <>
@@ -310,7 +379,6 @@ export default function Nav() {
             className="letter"
             id="about"
             onMouseEnter={handleAboutHover}
-            onMouseLeave={handleAboutStopHover}
             onClick={() => navigate("")}
           >
             <div>HOME</div>
