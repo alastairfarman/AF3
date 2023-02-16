@@ -4,12 +4,12 @@ export default function Retouch1() {
     <>
       <div className="nav-spacer"></div>
       <div className="double-img">
-        <img src="./media/MJ1/1.jpg" alt="" />
-        <img src="./media/MJ1/2.jpg" alt="" />
-      </div>
-      <div className="double-img">
         <img src="./media/MJ1/3.jpg" alt="" />
         <img src="./media/MJ1/4.jpg" alt="" />
+      </div>
+      <div className="double-img">
+        <img src="./media/MJ1/1.jpg" alt="" />
+        <img src="./media/MJ1/2.jpg" alt="" />
       </div>
       <div className="double-img">
         <img src="./media/MJ1/5.jpg" alt="" />

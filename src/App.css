@@ -192,7 +192,6 @@ p {
   }
 }
 
-
 .nav-section {
   box-sizing: border-box;
   font-size: 1rem;
@@ -435,7 +434,6 @@ a:visited {
   background-repeat: no-repeat;
   background-size: cover;
   transform-origin: top;
-  translate: 0 2rem;
 }
 
 #kickflip video {
