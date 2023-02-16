@@ -25,7 +25,16 @@ export default function Content() {
               LINKEDIN
             </a>
           </h3>
-          <h3>CV</h3>
+          <h3>
+            <a
+              href="./Alastair-Farman-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+            >
+              CV
+            </a>
+          </h3>
           <h3>
             <a
               href="https://github.com/alastairfarman"
