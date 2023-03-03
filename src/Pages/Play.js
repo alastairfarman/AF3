@@ -22,6 +22,13 @@ on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>`;
 
+const rotatecontent = `<p class="codepen" data-height="600" data-theme-id="dark" data-default-tab="result" data-slug-hash="qBMNREo" data-user="alastairfarman" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/alastairfarman/pen/qBMNREo">
+Working</a> by alastairfarman (<a href="https://codepen.io/alastairfarman">@alastairfarman</a>)
+on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>`;
+
 export default function Play() {
   const isSSR = typeof document === "undefined";
   let codePenScriptIsAppended = false;
@@ -56,10 +63,21 @@ export default function Play() {
         </div>
         <div className="add-info">
           <div></div>
-          <h4>SOME EXPERIMENTS. WORK-IN-PROGESS</h4>
+          <h4>SOME EXPERIMENTS. WORK-IN-PROGRESS</h4>
         </div>
       </div>
       <div className="pens">
+        <iframe
+          id="Car-iframe"
+          src="https://alastairfarman.github.io/bmw/"
+          title="Car"
+          style={{
+            width: "100%",
+            height: "calc(600px + 2rem)",
+            border: "unset",
+          }}
+        ></iframe>
+        {HTMLReactParser(rotatecontent, options)}
         {HTMLReactParser(flow, options)}
         {HTMLReactParser(psych2, options)}
         {HTMLReactParser(psych3, options)}

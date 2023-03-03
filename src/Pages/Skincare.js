@@ -7,7 +7,7 @@ export default function Skincare() {
       <div className="header-container">
         <div className="header">
           <div className="title">
-            <h1>Skincare Product Visualisation</h1>
+            <h1>Cosmetics Product Visualisation</h1>
           </div>
           <div className="add-info">
             <div>
@@ -23,8 +23,8 @@ export default function Skincare() {
             <h4>BLENDER, REACT</h4>
           </div>
           <p>
-            An experiment using 3d animations to enhance a product journey on a
-            website.
+            An experiment using 3d animations to enhance a product for a
+            cosmetics brand journey on a website.
           </p>
         </div>
         <div className="single-img-txt">
@@ -39,6 +39,21 @@ export default function Skincare() {
               As an alternative to creating a 3d environment with something like
               threejs, you can trade interactivity for more sophisticated
               renders.
+            </p>
+          </div>
+        </div>
+        <div className="double-img">
+          <img src="./media/CC/1.jpg" alt="" />
+          <img src="./media/CC/2.jpg" alt="" />
+        </div>
+        <div className="single-img-txt">
+          <img src="./media/CC/3.jpg" alt=""></img>
+          <div className="image-desc">
+            <p>
+              I modelled and texured something more recognisable with a
+              fluid-sim and Blender's new caustics to test this on a different
+              level. My laptop is still trying to render an animation and is
+              heating my entire building.
             </p>
           </div>
         </div>

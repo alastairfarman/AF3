@@ -418,7 +418,7 @@ export default function Nav() {
             onMouseEnter={handleHover}
             onMouseLeave={handleStopHover}
             onClick={handleClick}
-            data-project="Skincare Product Visualisation"
+            data-project="Cosmetics Product Visualisation"
             data-category="frontend 3d"
           >
             s

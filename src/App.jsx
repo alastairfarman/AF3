@@ -31,7 +31,7 @@ function App() {
         <Route exact path="performance-physique-bmi-calculator" element={<Performance/>}/>
         <Route exact path="soccerball" element={<Soccerball/>}/>
         <Route exact path="sunglasses-product-visualisation" element={<Sunglasses/>}/>
-        <Route exact path="skincare-product-visualisation" element={<Skincare/>}/>
+        <Route exact path="cosmetics-product-visualisation" element={<Skincare/>}/>
         <Route exact path="play" element={<Play/>}/>
         <Route exact path="sk8" element={<Sk8/>}/>
         <Route exact path="rest-2066" element={<Rest2066/>}/>
